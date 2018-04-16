@@ -1,0 +1,14 @@
+site_name: ODOS CRRS
+site_description: conference Room Reservation System.
+site_author:  Team ODOS
+site_url: https://github.com/ODOS-II-code-challange/odos_crrs_ui
+
+# Repository
+repo_name: 'odos_crrs_ui'
+repo_url: https://github.com/ODOS-II-code-challange/odos_crrs_ui
+
+
+pages:
+    - Home: index.md
+    - About: about.md
+theme: readthedocs
