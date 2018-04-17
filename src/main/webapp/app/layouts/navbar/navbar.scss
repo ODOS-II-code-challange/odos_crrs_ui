@@ -56,6 +56,13 @@ Navbar
 .navbar-title {
     display: inline-block;
     vertical-align: middle;
+    font-weight: bold;
+    font-style: normal;
+    color: #fff;
+    font-family: "Lato",sans-serif,"google";
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 /* ==========================================================================
@@ -69,7 +76,7 @@ Logo styles
             width: 70px;
             display: inline-block;
             vertical-align: middle;
-            background: url("../../../content/images/logo-jhipster.png") no-repeat center center;
+            background: url("../../../content/images/logo-uscis.png") no-repeat center center;
             background-size: contain;
         }
     }
