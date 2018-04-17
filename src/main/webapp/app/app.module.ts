@@ -10,9 +10,10 @@ import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
 import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
-import { OdosCrrsUiSharedModule, UserRouteAccessService } from './shared';
+import { OdosCrrsUiSharedModule, UserRouteAccessService, CapitalizeFirstPipe } from './shared';
 import { OdosCrrsUiAppRoutingModule} from './app-routing.module';
 import { OdosCrrsUiHomeModule } from './home/home.module';
+import { OdosCrrsUiConferenceRoomModule } from './conference-room/conference-room.module';
 import { OdosCrrsUiAdminModule } from './admin/admin.module';
 import { OdosCrrsUiAccountModule } from './account/account.module';
 import { OdosCrrsUiEntityModule } from './entities/entity.module';
@@ -34,6 +35,7 @@ import {
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
         OdosCrrsUiSharedModule,
         OdosCrrsUiHomeModule,
+        OdosCrrsUiConferenceRoomModule,
         OdosCrrsUiAdminModule,
         OdosCrrsUiAccountModule,
         OdosCrrsUiEntityModule,
@@ -44,7 +46,8 @@ import {
         NavbarComponent,
         ErrorComponent,
         PageRibbonComponent,
-        FooterComponent
+        FooterComponent,
+        CapitalizeFirstPipe
     ],
     providers: [
         ProfileService,
