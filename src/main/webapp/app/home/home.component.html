@@ -1,41 +1,75 @@
+<!--<div class="row">-->
+    <!--<div class="col-md-4">-->
+    <!--</div>-->
+    <!--<div class="col-md-4">-->
+
+        <!--&lt;!&ndash;<div [ngSwitch]="isAuthenticated()">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="alert alert-success" *ngSwitchCase="true">&ndash;&gt;-->
+                <!--&lt;!&ndash;<span *ngIf="account"&ndash;&gt;-->
+                   <!--&lt;!&ndash;&gt; You are logged in as user "{{account.login}}". </span>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<div class="alert alert-warning" *ngSwitchCase="false">&ndash;&gt;-->
+                <!--&lt;!&ndash;<span>You don't have an account yet?</span>&ndash;&gt;-->
+                <!--&lt;!&ndash;<a class="alert-link" routerLink="register">Register a new account</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
 <div class="row">
-    <div class="col-md-3">
-        <span class="hipster img-fluid rounded"></span>
-    </div>
-    <div class="col-md-9">
-        <h1 class="display-4">Welcome, Java Hipster!</h1>
-        <p class="lead">This is your homepage</p>
-
-        <div [ngSwitch]="isAuthenticated()">
-            <div class="alert alert-success" *ngSwitchCase="true">
-                <span *ngIf="account"
-                   > You are logged in as user "{{account.login}}". </span>
+    <h2 class="landing-title">
+        CONFERENCE ROOM BUILDINGS
+    </h2>
+</div>
+<hr>
+<div class="row row-margin-bottom row-box" *ngFor="let building of buildings">
+    <div class="lib-panel" >
+        <div class="row box-shadow">
+            <div class="col-md-6 no-padding">
+                <img src="../../content/images/conference-room.jpg" alt="">
             </div>
+            <div class="col-md-6">
+                <div class="lib-row lib-header">
+                    <p>{{ building.building_name }}</p>
+                    <hr>
 
-            <div class="alert alert-warning" *ngSwitchCase="false">
-                <span>If you want to </span>
-                <a class="alert-link" (click)="login()">sign in</a><span>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
-            </div>
-            <div class="alert alert-warning" *ngSwitchCase="false">
-                <span>You don't have an account yet?</span>
-                <a class="alert-link" routerLink="register">Register a new account</a>
+                    <div class="lib-row lib-desc">
+                        {{ building.building_description }}
+                    </div>
+                </div>
+
+
+                <div class="lib-row">
+                    <p>Availablity Today</p>
+
+                    <table class="table table-sm table-hover table-bordered table-striped" style="height: 19px;">
+                        <thead class="" style="background-color: #c8def1">
+                            <tr>
+                                <th>Concerence Rooms Name</th>
+                                <th>Concerence Room Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let conf of building.conference_rooms">
+                                <td>{{ conf.room_name }}</td>
+                                <td>{{ conf.room_number }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="lib-row">
+                    <a href="">
+                        <input style="border-radius: 5px;" class="btn btn-primary btn-lg" type="submit" name="reserve" id="reserve" value="Reserve">
+                    </a>
+                </div>
+
             </div>
         </div>
-
-        <p>
-            If you have any question on JHipster:
-        </p>
-
-        <ul>
-            <li><a href="http://www.jhipster.tech/" target="_blank" rel="noopener">JHipster homepage</a></li>
-            <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener">JHipster on Stack Overflow</a></li>
-            <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener">JHipster bug tracker</a></li>
-            <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener">JHipster public chat room</a></li>
-            <li><a href="https://twitter.com/java_hipster" target="_blank" rel="noopener">follow @java_hipster on Twitter</a></li>
-        </ul>
-
-        <p>
-            <span>If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">GitHub</a>!
-        </p>
     </div>
+
 </div>
+
+
+
+
