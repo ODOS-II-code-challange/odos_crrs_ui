@@ -32,11 +32,6 @@ spring:
             enabled: false
         livereload:
             enabled: false
-    datasource:
-        type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB}
-        username: ${DB_USERNAME}
-        password: ${DB_PASSWORD}
     jpa:
         database-platform: io.github.jhipster.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
