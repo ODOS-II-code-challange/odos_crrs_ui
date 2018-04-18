@@ -18,7 +18,7 @@ eureka:
     client:
         enabled: true
         healthcheck:
-            enabled: false
+            enabled: true
         fetch-registry: true
         register-with-eureka: true
         instance-info-replication-interval-seconds: 10
@@ -36,7 +36,7 @@ eureka:
             version: ${info.project.version}
 ribbon:
     eureka:
-        enabled: false
+        enabled: true
 # See http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
 zuul: # those values must be configured depending on the application specific needs
     host:
