@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to ODOS Conference Room Reservation System\n\n\n\n\n\nDescription\n\n\n    *\n    *\n    *\n\n\n\nCommands\n\n\n    *\n    *\n    *\n\n\n\nProject layout\n\n\n    *\n    *\n    *",
+            "text": "Welcome to ODOS Conference Room Reservation System\n\n\n\n\n\nDescription\n\n\n\n\nThe purpose of this page is to provide a centeralized source of knowledge for ODOS Confrence Room Reservation System. The page will contain information on each of the services that will make up the Conference Room Reservation System. This page will also display the varity of pipeline tools that are being used in the project.\n\n\nThe left colomun of the page listed out all services and the coresponding functionality that will help users of this page navigate easily.\n\n\n\n\nCommands\n\n\nInstall JHipster 4\n\n\n    The Installing JHipster instructions show you all the tools you\u2019ll need to use a released version of JHipster.\n\n    Install Java 8 from Oracle.\n\n    Install Git from https://git-scm.com.\n\n    Install Node.js from http://nodejs.org. I used Node 6.9.1 to write this article.\n\n    Install Yarn using the Yarn installation instructions.\n\n    Run the following command to install Yeoman.\n\n    yarn global add yo\n\n    Run the following command to install JHipster.\n\n    yarn global add generator-jhipster\n\n\n\nProject layout\n\n\n\n\nThe project layout for ODOS Confrence Room Reservation System encompasses several cutting edge technologies. \n\n\n\n\nWe decided to use rapid application development framework of Jhipster, It combines three very successful frameworks in web development: Bootstrap, Angular, and Spring Boot. \n\n\n\n\n\n\n\nJHipster is a tool that has been endorsed by the Angular team and spring team. The first public release (version 0.3.1) was launched December 7, 2013, with an open-source, Apache 2.0-licensed project on GitHub. Since then, the project has had over 115 releases! At it's core, JHipster is a Yeoman generator. Yeoman is a code generator that you run with a yo command to generate complete applications or useful pieces of an application. \n\n\n\n\n\n\nThe technology stack used in creating ODOS Confrence Room Reservation System are:\n\n\n\n\n\n\nJhipster Gateway/UI technology stack\n\n\n\n\nAngular-5\n\n\nResponsive Web Design with Twitter Bootstrap\n\n\nHTML5 Boilerplate\n\n\nWebSocket support with Spring Websocket\n\n\nEasy installation of new JavaScript libraries with Yarn\n\n\nBuild, optimization and live reload with Webpack\n\n\nTesting with Karma, Headless Chrome and Protractor\n\n\n\n\nJhipster technology stack on the server side\n\n\nA complete Spring application:\n\n\n\n\nSpring Boot for easy application configuration\n\n\nGradle configuration for building, testing and running the application \u201cdevelopment\u201d and \u201cproduction\u201d profiles \n\n\nSpring Security\n\n\nSpring MVC REST + Jackson\n\n\nWebSocket support with Spring Websocket\n\n\nSpring Data JPA + Bean Validation\n\n\nDatabase updates with Liquibase\n\n\nElasticsearch support for search capabilities on top of the database\n\n\n\n\nJhipster Microservices Registry\n\n\n\n\nService discovery using Netflix Eureka\n\n\nZipkin to trace HTTP requests throughout your services\n\n\nElastalert to get alerted when an issue occurs\n\n\n\n\nJhipster Console\n\n\n\n\nMonitoring with Metrics and the ELK Stack\n\n\nCaching with ehcache (local cache), hazelcast\n\n\n\n\nGoing to production\n\n\n\n\nIn the bootstrap-prod.yml\n\n\nIn the application-prod.yml\n\n\n\n\n\n\nApplication services content\n\n\nWalkthrough\n\n\nLet\u2019s discover what the JHipster has done for us.\n\n\n\n\n\n\n/src/main/java folder contains our Spring code distributed as follows:\n\n\n\n\nconfig folder contains Spring\u2019s configuration.\n\n\ndomain folder contains all domain classes that are mapped by Hibernate to our choice of database, in this case, PostgreSQL.\n\n\nrepository folder contains all of the Spring Data based repositories.\n\n\nservice folder contains all of the @Service annotated class those are transactional.\n\n\nsecurity folder contains all of the Spring Security based implementations like a simple implementation of UserDetailsService.\n\n\nweb.rest folder contains all of the REST endpoints which uses Spring MVC\u2019s REST support.\n\n\n\n\n\n\n\n\n/src/main/resources/config/liquibase folder contains Liquibase changeset files. This folder also contains csv files to build initial users and authorities for the application.\n\n\n\n\n\n\n/src/main/webapp folder contains our AngularJS code described as follows:\n\n\n\n\nscripts.component folder contains all of the AngularJS\u2019 artifacts, like filters and services.\n\n\nscripts.app folder contains all of the app\u2019s JavaScript code that includes HTML and Angular Controllers distributed in the various folder like account, admin, entities etc.\n\n\nscripts.components folder contains all of the app\u2019s JavaScript code that includes Angular Services.\n\n\n\n\n\n\n\n\nRunning the application\n\n\nAs the JHipster application here uses Gradle and Grunt, all you need is just to run the Gradle wrapper and Grunt.\n\n\n\n\n\n\nExecute ./gradlew Gradle wrapper executable file. It would download the correct version of Gradle and run your application by executing default task bootRun. This command will process JS, CSS and Images to by executing Grunt tasks right inside of build.gradle. You will be served with the address http://localhost:8080/\n\n\n\n\n\n\nIn another terminal execute grunt or yarn start and it would start to build all the JS and CSS. You will be served with the address http://localhost:3000 or http://localhost:9000 that allows us to reload all of the HTML and JS changes without restarting our application.\n\n\n\n\n\n\nTo build a jar file and run that jar issue the commands; ./gradlew -Pprod clean bootRepackage. And now just execute java -jar build/libs/*.war \u2013spring.profiles.active=prod.\n\n\n\n\n\n\nApplication Metrics\n\n\nHere is the view of the application metrics\n\n\n\n\nLog management screen\n\n\n\n\nDatabase\n\n\n????\n????\n????\n\n\n\n\nPipeline\n\n\nWe used Jenkins Pipeline\n\n\n\n\n????\n????\n\n\nSingle Sign On (SSO)\n\n\n\n\nwe used SAML2\n?????\n?????\n????\n\n\n\n\nApplication Services Architecture (microservice architecture)\n\n\n?????\n????\n????",
             "title": "Home"
         },
         {
@@ -12,18 +12,88 @@
         },
         {
             "location": "/#description",
-            "text": "*\n    *\n    *",
+            "text": "The purpose of this page is to provide a centeralized source of knowledge for ODOS Confrence Room Reservation System. The page will contain information on each of the services that will make up the Conference Room Reservation System. This page will also display the varity of pipeline tools that are being used in the project.  The left colomun of the page listed out all services and the coresponding functionality that will help users of this page navigate easily.",
             "title": "Description"
         },
         {
             "location": "/#commands",
-            "text": "*\n    *\n    *",
+            "text": "Install JHipster 4      The Installing JHipster instructions show you all the tools you\u2019ll need to use a released version of JHipster.\n\n    Install Java 8 from Oracle.\n\n    Install Git from https://git-scm.com.\n\n    Install Node.js from http://nodejs.org. I used Node 6.9.1 to write this article.\n\n    Install Yarn using the Yarn installation instructions.\n\n    Run the following command to install Yeoman.\n\n    yarn global add yo\n\n    Run the following command to install JHipster.\n\n    yarn global add generator-jhipster",
             "title": "Commands"
         },
         {
             "location": "/#project-layout",
-            "text": "*\n    *\n    *",
+            "text": "The project layout for ODOS Confrence Room Reservation System encompasses several cutting edge technologies.    We decided to use rapid application development framework of Jhipster, It combines three very successful frameworks in web development: Bootstrap, Angular, and Spring Boot.     JHipster is a tool that has been endorsed by the Angular team and spring team. The first public release (version 0.3.1) was launched December 7, 2013, with an open-source, Apache 2.0-licensed project on GitHub. Since then, the project has had over 115 releases! At it's core, JHipster is a Yeoman generator. Yeoman is a code generator that you run with a yo command to generate complete applications or useful pieces of an application.     The technology stack used in creating ODOS Confrence Room Reservation System are:",
             "title": "Project layout"
+        },
+        {
+            "location": "/#jhipster-gatewayui-technology-stack",
+            "text": "Angular-5  Responsive Web Design with Twitter Bootstrap  HTML5 Boilerplate  WebSocket support with Spring Websocket  Easy installation of new JavaScript libraries with Yarn  Build, optimization and live reload with Webpack  Testing with Karma, Headless Chrome and Protractor",
+            "title": "Jhipster Gateway/UI technology stack"
+        },
+        {
+            "location": "/#jhipster-technology-stack-on-the-server-side",
+            "text": "A complete Spring application:   Spring Boot for easy application configuration  Gradle configuration for building, testing and running the application \u201cdevelopment\u201d and \u201cproduction\u201d profiles   Spring Security  Spring MVC REST + Jackson  WebSocket support with Spring Websocket  Spring Data JPA + Bean Validation  Database updates with Liquibase  Elasticsearch support for search capabilities on top of the database",
+            "title": "Jhipster technology stack on the server side"
+        },
+        {
+            "location": "/#jhipster-microservices-registry",
+            "text": "Service discovery using Netflix Eureka  Zipkin to trace HTTP requests throughout your services  Elastalert to get alerted when an issue occurs",
+            "title": "Jhipster Microservices Registry"
+        },
+        {
+            "location": "/#jhipster-console",
+            "text": "Monitoring with Metrics and the ELK Stack  Caching with ehcache (local cache), hazelcast",
+            "title": "Jhipster Console"
+        },
+        {
+            "location": "/#going-to-production",
+            "text": "In the bootstrap-prod.yml  In the application-prod.yml",
+            "title": "Going to production"
+        },
+        {
+            "location": "/#application-services-content",
+            "text": "",
+            "title": "Application services content"
+        },
+        {
+            "location": "/#walkthrough",
+            "text": "Let\u2019s discover what the JHipster has done for us.    /src/main/java folder contains our Spring code distributed as follows:   config folder contains Spring\u2019s configuration.  domain folder contains all domain classes that are mapped by Hibernate to our choice of database, in this case, PostgreSQL.  repository folder contains all of the Spring Data based repositories.  service folder contains all of the @Service annotated class those are transactional.  security folder contains all of the Spring Security based implementations like a simple implementation of UserDetailsService.  web.rest folder contains all of the REST endpoints which uses Spring MVC\u2019s REST support.     /src/main/resources/config/liquibase folder contains Liquibase changeset files. This folder also contains csv files to build initial users and authorities for the application.    /src/main/webapp folder contains our AngularJS code described as follows:   scripts.component folder contains all of the AngularJS\u2019 artifacts, like filters and services.  scripts.app folder contains all of the app\u2019s JavaScript code that includes HTML and Angular Controllers distributed in the various folder like account, admin, entities etc.  scripts.components folder contains all of the app\u2019s JavaScript code that includes Angular Services.",
+            "title": "Walkthrough"
+        },
+        {
+            "location": "/#running-the-application",
+            "text": "As the JHipster application here uses Gradle and Grunt, all you need is just to run the Gradle wrapper and Grunt.    Execute ./gradlew Gradle wrapper executable file. It would download the correct version of Gradle and run your application by executing default task bootRun. This command will process JS, CSS and Images to by executing Grunt tasks right inside of build.gradle. You will be served with the address http://localhost:8080/    In another terminal execute grunt or yarn start and it would start to build all the JS and CSS. You will be served with the address http://localhost:3000 or http://localhost:9000 that allows us to reload all of the HTML and JS changes without restarting our application.    To build a jar file and run that jar issue the commands; ./gradlew -Pprod clean bootRepackage. And now just execute java -jar build/libs/*.war \u2013spring.profiles.active=prod.",
+            "title": "Running the application"
+        },
+        {
+            "location": "/#application-metrics",
+            "text": "Here is the view of the application metrics",
+            "title": "Application Metrics"
+        },
+        {
+            "location": "/#log-management-screen",
+            "text": "",
+            "title": "Log management screen"
+        },
+        {
+            "location": "/#database",
+            "text": "????\n????\n????",
+            "title": "Database"
+        },
+        {
+            "location": "/#pipeline",
+            "text": "We used Jenkins Pipeline   ????\n????",
+            "title": "Pipeline"
+        },
+        {
+            "location": "/#single-sign-on-sso",
+            "text": "we used SAML2\n?????\n?????\n????",
+            "title": "Single Sign On (SSO)"
+        },
+        {
+            "location": "/#application-services-architecture-microservice-architecture",
+            "text": "?????\n????\n????",
+            "title": "Application Services Architecture (microservice architecture)"
         },
         {
             "location": "/about/",
@@ -34,6 +104,46 @@
             "location": "/about/#about-odos-crrs",
             "text": "*\n    *\n    *",
             "title": "About ODOS CRRS"
+        },
+        {
+            "location": "/extensions/footer/",
+            "text": "Footnotes\n\n\nFootnotes\n is another extension included in the standard Markdown library.\nAs the name says, it adds the ability to add footnotes to your documentation.\n\n\nInstallation\n\n\nAdd the following lines to your \nmkdocs.yml\n:\n\n\nmarkdown_extensions:\n  - footnotes\n\n\n\n\nUsage\n\n\nThe markup for footnotes is similar to the standard Markdown markup for links.\nA reference is inserted in the text, which can then be defined at any point in\nthe document.\n\n\nInserting the reference\n\n\nThe footnote reference is enclosed in square brackets and starts with a caret,\nfollowed by an arbitrary label which may contain numeric identifiers [1, 2, 3,\n...] or names [Granovetter et al. 1998]. The rendered references are always\nconsecutive superscripted numbers.\n\n\nExample:\n\n\nLorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]\n\n\n\n\nResult:\n\n\nLorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.\n^2\n\n\nInserting the content\n\n\nThe footnote content is also declared with a label, which must match the label\nused for the footnote reference. It can be inserted at an arbitrary position in\nthe document and is always rendered at the bottom of the page. Furthermore, a\nbacklink is automatically added to the footnote reference.\n\n\non a single line\n\n\nShort statements can be written on the same line.\n\n\nExample:\n\n\n[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\n\n\n\nResult:\n\n\nJump to footnote at the bottom of the page\n\n\n[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\n\non multiple lines\n\n\nParagraphs should be written on the next line. As with all Markdown blocks, the\ncontent must be indented by four spaces.\n\n\nExample:\n\n\n[^2]:\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod\n    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor\n    massa, nec semper lorem quam in massa.\n\n\n\n\nResult:\n\n\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod\n  nulla. Curabitur feugiat, tortor non consequat finibus, justo purus\n  auctor massa, nec semper lorem quam in massa.\n\n\n\nJump to footnote at the bottom of the page",
+            "title": "Footnotes"
+        },
+        {
+            "location": "/extensions/footer/#footnotes",
+            "text": "Footnotes  is another extension included in the standard Markdown library.\nAs the name says, it adds the ability to add footnotes to your documentation.",
+            "title": "Footnotes"
+        },
+        {
+            "location": "/extensions/footer/#installation",
+            "text": "Add the following lines to your  mkdocs.yml :  markdown_extensions:\n  - footnotes",
+            "title": "Installation"
+        },
+        {
+            "location": "/extensions/footer/#usage",
+            "text": "The markup for footnotes is similar to the standard Markdown markup for links.\nA reference is inserted in the text, which can then be defined at any point in\nthe document.",
+            "title": "Usage"
+        },
+        {
+            "location": "/extensions/footer/#inserting-the-reference",
+            "text": "The footnote reference is enclosed in square brackets and starts with a caret,\nfollowed by an arbitrary label which may contain numeric identifiers [1, 2, 3,\n...] or names [Granovetter et al. 1998]. The rendered references are always\nconsecutive superscripted numbers.  Example:  Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]  Result:  Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit. ^2",
+            "title": "Inserting the reference"
+        },
+        {
+            "location": "/extensions/footer/#inserting-the-content",
+            "text": "The footnote content is also declared with a label, which must match the label\nused for the footnote reference. It can be inserted at an arbitrary position in\nthe document and is always rendered at the bottom of the page. Furthermore, a\nbacklink is automatically added to the footnote reference.",
+            "title": "Inserting the content"
+        },
+        {
+            "location": "/extensions/footer/#on-a-single-line",
+            "text": "Short statements can be written on the same line.  Example:  [^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Result:  Jump to footnote at the bottom of the page  [^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "title": "on a single line"
+        },
+        {
+            "location": "/extensions/footer/#on-multiple-lines",
+            "text": "Paragraphs should be written on the next line. As with all Markdown blocks, the\ncontent must be indented by four spaces.  Example:  [^2]:\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod\n    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor\n    massa, nec semper lorem quam in massa.  Result:    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod\n  nulla. Curabitur feugiat, tortor non consequat finibus, justo purus\n  auctor massa, nec semper lorem quam in massa.  Jump to footnote at the bottom of the page",
+            "title": "on multiple lines"
         }
     ]
 }

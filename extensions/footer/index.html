@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Team ODOS">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Footnotes - ODOS CRRS</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Footnotes";
+    var mkdocs_page_input_path = "extensions/footer.md";
+    var mkdocs_page_url = "/extensions/footer/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> ODOS CRRS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../about/">About</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Extensions</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Footnotes</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#footnotes">Footnotes</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#installation">Installation</a></li>
+        
+            <li><a class="toctree-l4" href="#usage">Usage</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">ODOS CRRS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Extensions &raquo;</li>
+        
+      
+    
+    <li>Footnotes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/ODOS-II-code-challange/odos_crrs_ui/edit/master/docs/extensions/footer.md"> Edit on odos_crrs_ui</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="footnotes">Footnotes</h1>
+<p><a href="https://python-markdown.github.io/extensions/footnotes/">Footnotes</a> is another extension included in the standard Markdown library.
+As the name says, it adds the ability to add footnotes to your documentation.</p>
+<h2 id="installation">Installation</h2>
+<p>Add the following lines to your <code>mkdocs.yml</code>:</p>
+<pre><code class="yaml">markdown_extensions:
+  - footnotes
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+<p>The markup for footnotes is similar to the standard Markdown markup for links.
+A reference is inserted in the text, which can then be defined at any point in
+the document.</p>
+<h3 id="inserting-the-reference">Inserting the reference</h3>
+<p>The footnote reference is enclosed in square brackets and starts with a caret,
+followed by an arbitrary label which may contain numeric identifiers [1, 2, 3,
+...] or names [Granovetter et al. 1998]. The rendered references are always
+consecutive superscripted numbers.</p>
+<p>Example:</p>
+<pre><code class="markdown">Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]
+</code></pre>
+
+<p>Result:</p>
+<p>Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.<a href="">^2</a></p>
+<h3 id="inserting-the-content">Inserting the content</h3>
+<p>The footnote content is also declared with a label, which must match the label
+used for the footnote reference. It can be inserted at an arbitrary position in
+the document and is always rendered at the bottom of the page. Furthermore, a
+backlink is automatically added to the footnote reference.</p>
+<h4 id="on-a-single-line">on a single line</h4>
+<p>Short statements can be written on the same line.</p>
+<p>Example:</p>
+<pre><code class="markdown">[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</code></pre>
+
+<p>Result:</p>
+<p><a href="#fn:1">Jump to footnote at the bottom of the page</a></p>
+<p>[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h4 id="on-multiple-lines">on multiple lines</h4>
+<p>Paragraphs should be written on the next line. As with all Markdown blocks, the
+content must be indented by four spaces.</p>
+<p>Example:</p>
+<pre><code class="markdown">[^2]:
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
+</code></pre>
+
+<p>Result:</p>
+<pre><code>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+  nulla. Curabitur feugiat, tortor non consequat finibus, justo purus
+  auctor massa, nec semper lorem quam in massa.
+</code></pre>
+<p><a href="#fn:2">Jump to footnote at the bottom of the page</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../about/" class="btn btn-neutral" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../about/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>
