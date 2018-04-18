@@ -53,6 +53,7 @@ export class ConferenceRoomComponent implements OnInit {
     getBuildigInfo(building_number: Number){
 
         this.conference_room_names = ["KitKat", "Twix", "Mars", "M&Ms"];
+        this.selectedRoom = this.conference_room_names[0];
 
         this.building_info = {
             "building_number": building_number,
