@@ -13,52 +13,70 @@
             <p></p>
 
             <div class="reservation_steps">
-                    <span style="display: inline-block;" class="reservation_step">
-                        <div class="reservation_step_img">
-                            <div class="reservation_step_img_text">
-                                <strong>1</strong>
-                            </div>
-                            <div class="reservation_step_name">Reserve Information</div>
+                <span style="display: inline-block;" class="reservation_step">
+                    <div class="reservation_step_img">
+                        <div class="reservation_step_img_text">
+                            <strong>1</strong>
                         </div>
-                    </span>
-                    <span style="display: inline-block;" class="reservation_step">
-                        <div class="reservation_step_img">
-                            <div class="reservation_step_img_text">
-                                <strong>2</strong>
-                            </div>
-                            <div class="reservation_step_name">Reservation Date</div>
+                        <div class="reservation_step_name">Reservation Details</div>
+                    </div>
+                </span>
+                <span style="display: inline-block;" class="reservation_step">
+                    <div class="reservation_step_img">
+                        <div class="reservation_step_img_text">
+                            <strong>2</strong>
                         </div>
-                    </span>
-                    <span style="display:inline-block;" class="reservation_step">
-                        <div class="reservation_step_img">
-                            <div class="reservation_step_img_text">
-                                <strong>3</strong>
-                            </div>
-                            <div class="reservation_step_name">Reservtion Completed</div>
+                        <div class="reservation_step_name">Reservation Date</div>
+                    </div>
+                </span>
+                <span style="display:inline-block;" class="reservation_step">
+                    <div class="reservation_step_img">
+                        <div class="reservation_step_img_text">
+                            <strong>3</strong>
                         </div>
-                    </span>
+                        <div class="reservation_step_name">Reservation Completed</div>
+                    </div>
+                </span>
+            </div>
+            <br>
+            <br>
+            <div class="row col-xs-12" style="margin-top: 15px;padding: 0;">
+                <div class="col-md-8">
+                    <form id="reservation_form" name="reservation_form" action="" role="form" method="post">
+                        <div class="personal_details"> 
+                            <h3>Reservation Details</h3>
+                            <div class="form-group planyo-form-item-group  col-md-8" id="row_first">
+                                <label class="control-label">First name<em>*</em></label>
+                                <input class="with-status-border form-control" maxlength="80" type="text" id="first" name="first">
+                            </div>
+                            <div class="form-group planyo-form-item-group  col-md-8" id="row_last">
+                                <label class="control-label">Last name<em>*</em></label>
+                                <input class="with-status-border form-control" maxlength="80" type="text" id="last" name="last">
+                            </div>
+                            <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
+                                <label class="control-label">Email<em>*</em></label>
+                                <input type="email" class="with-status-border form-control" maxlength="80" type="text" id="email" name="email">
+                            </div>
+                            <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
+                                <label class="control-label">Conference Title<em>*</em></label>
+                                <input type="email" class="with-status-border form-control" maxlength="80" type="text" id="email" name="email">
+                            </div>
+                            <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
+                                <label class="control-label">Conference Description<em>*</em></label>
+                                <textarea type="email" class="with-status-border form-control" maxlength="80" type="text" id="email" name="email"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-button">
+                            <label for="submit_form">&nbsp;</label>
+                            <input style="border-radius: 5px;" type="submit" class="btn btn-primary btn-sm" value="Continue" name="submit_form" id="submit_form">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+        
                 </div>
         
-                <p></p>
-        
-                <div class="row col-xs-12" style="margin-top: 15px;padding: 0;">
-                    <div class="col-md-8">
-                        <form id="reservation_form" name="reservation_form" action="" role="form" method="post">
-                            <div>
-        
-                            </div>
-        
-                            <div class="form-button">
-                                <label for="submit_form">&nbsp;</label>
-                                <input style="border-radius: 5px;" type="submit" class="btn btn-primary btn-sm" value="Make reservation" name="submit_form" id="submit_form">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-4">
-        
-                    </div>
-        
-                </div>
+            </div>
         </div>
         
     </div>
