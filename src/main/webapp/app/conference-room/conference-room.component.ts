@@ -8,7 +8,7 @@ import { Account, LoginModalService, Principal } from "../shared";
 @Component({
     selector: 'jhi-conference-room',
     templateUrl: './conference-room.component.html',
-    styles: [
+    styleUrls: [
       'conference-room.scss'
     ]
 

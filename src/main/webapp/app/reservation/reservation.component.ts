@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'jhi-reservation',
   templateUrl: './reservation.component.html',
-  styles: [
+  styleUrls: [
       'reservation.scss'
   ]
 })
