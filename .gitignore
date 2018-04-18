@@ -2,6 +2,7 @@
 # Project Specific
 ######################
 .env
+/out/
 /src/main/webapp/content/css/main.css
 /build/www/**
 /src/test/javascript/coverage/

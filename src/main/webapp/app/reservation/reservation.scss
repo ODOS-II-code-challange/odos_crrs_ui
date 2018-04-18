@@ -1,0 +1,61 @@
+/* ==========================================================================
+Reservation page styles
+========================================================================== */
+
+.content {
+    padding: 20px 25px;
+    margin: 0 auto;
+    max-width: 1050px;
+}
+
+.reservation_step {
+    margin-right: 25px;
+    max-width: 80px;
+    vertical-align: top;
+}
+
+.reservation_step_img {
+    background-color: #428bca;
+}
+
+.reservation_step .reservation_step_img {
+    background-color: rgba(37, 51, 64, 0.22);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    padding-top: 1px;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    line-height: initial;
+}
+
+.reservation_step_img_text {
+    padding-top: 9px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
+.reservation_step_current {
+    display: inline-block;
+    margin-right: 25px;
+    max-width: 80px;
+    vertical-align: top;
+}
+
+.reservation_step_current .reservation_step_name {
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.reservation_step_current .reservation_step_name {
+    color: #428bca;
+}
