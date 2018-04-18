@@ -42,28 +42,29 @@
             <br>
             <div class="row col-xs-12" style="margin-top: 15px;padding: 0;">
                 <div class="col-md-8">
-                    <form id="reservation_form" name="reservation_form" action="" role="form" method="post">
+                    <h3>Reservation Details</h3>
+                    <form [formGroup]="reservationform">
                         <div class="personal_details"> 
-                            <h3>Reservation Details</h3>
+                            
                             <div class="form-group planyo-form-item-group  col-md-8" id="row_first">
-                                <label class="control-label">First name<em>*</em></label>
-                                <input class="with-status-border form-control" maxlength="80" type="text" id="first" name="first">
+                                <label for="firstName" class="control-label">First name<em>*</em></label>
+                                <input class="with-status-border form-control" maxlength="80" type="text" name="firstName" id="firstName" formControlName="firstName">
                             </div>
                             <div class="form-group planyo-form-item-group  col-md-8" id="row_last">
-                                <label class="control-label">Last name<em>*</em></label>
-                                <input class="with-status-border form-control" maxlength="80" type="text" id="last" name="last">
+                                <label for="lastName" class="control-label">Last name<em>*</em></label>
+                                <input class="with-status-border form-control" maxlength="80" type="text" name="lastName" id="lastName" formControlName="lastName">
                             </div>
                             <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
-                                <label class="control-label">Email<em>*</em></label>
-                                <input type="email" class="with-status-border form-control" maxlength="80" type="text" id="email" name="email">
+                                <label for="email" class="control-label">Email<em>*</em></label>
+                                <input type="email" class="with-status-border form-control" maxlength="80" type="text" name="email" id="email" formControlName="email">
                             </div>
                             <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
-                                <label class="control-label">Conference Title<em>*</em></label>
-                                <input type="email" class="with-status-border form-control" maxlength="80" type="text" id="email" name="email">
+                                <label for="conferenceTitle" class="control-label">Conference Title<em>*</em></label>
+                                <input type="text" class="with-status-border form-control" maxlength="80" type="text" name="conferenceTitle" id="conferenceTitle" formControlName="conferenceTitle">
                             </div>
                             <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
-                                <label class="control-label">Conference Description<em>*</em></label>
-                                <textarea type="email" class="with-status-border form-control" maxlength="80" type="text" id="email" name="email"></textarea>
+                                <label for="conferenceDescription" class="control-label">Conference Description<em>*</em></label>
+                                <textarea type="text" class="with-status-border form-control" maxlength="80" type="text" name="conferenceDescription" id="conferenceDescription" formControlName="conferenceDescription"></textarea>
                             </div>
                         </div>
                         <div class="form-button">
