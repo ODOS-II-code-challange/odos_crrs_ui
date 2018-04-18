@@ -12,9 +12,10 @@ import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.inter
 import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
 import { OdosCrrsUiSharedModule, UserRouteAccessService, CapitalizeFirstPipe } from './shared';
 import { OdosCrrsUiAppRoutingModule} from './app-routing.module';
-import { OdosCrrsUiHomeModule } from './home/home.module';
-import { OdosCrrsUiConferenceRoomModule } from './conference-room/conference-room.module';
-import { OdosCrrsUiReservationModule } from './reservation/reservation.module';
+import { OdosCrrsUiHomeModule } from './home';
+import { OdosCrrsUiConferenceRoomModule } from './conference-room';
+import { OdosCrrsUiReservationModule } from './reservation';
+import {OdosCrrsUiReportModule} from "./report";
 import { OdosCrrsUiAdminModule } from './admin/admin.module';
 import { OdosCrrsUiAccountModule } from './account/account.module';
 import { OdosCrrsUiEntityModule } from './entities/entity.module';
@@ -29,6 +30,7 @@ import {
     ErrorComponent
 } from './layouts';
 
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -38,6 +40,7 @@ import {
         OdosCrrsUiHomeModule,
         OdosCrrsUiConferenceRoomModule,
         OdosCrrsUiReservationModule,
+        OdosCrrsUiReportModule,
         OdosCrrsUiAdminModule,
         OdosCrrsUiAccountModule,
         OdosCrrsUiEntityModule,
@@ -49,7 +52,7 @@ import {
         ErrorComponent,
         PageRibbonComponent,
         FooterComponent,
-        CapitalizeFirstPipe
+        CapitalizeFirstPipe,
     ],
     providers: [
         ProfileService,
