@@ -73,6 +73,8 @@
         
             <li><a class="toctree-l3" href="#running-the-application">Running the application</a></li>
         
+            <li><a class="toctree-l3" href="#odos-conference-room-reservation-web-application-overview">ODOS Conference Room Reservation Web Application Overview</a></li>
+        
             <li><a class="toctree-l3" href="#application-metrics">Application Metrics</a></li>
         
             <li><a class="toctree-l3" href="#log-management-screen">Log management screen</a></li>
@@ -81,11 +83,21 @@
         
             <li><a class="toctree-l3" href="#pipeline">Pipeline</a></li>
         
+            <li><a class="toctree-l3" href="#sonarqube">SonarQube</a></li>
+        
+            <li><a class="toctree-l3" href="#nexus-repository-manager">Nexus Repository Manager</a></li>
+        
+            <li><a class="toctree-l3" href="#twistlock">Twistlock</a></li>
+        
+            <li><a class="toctree-l3" href="#splunk">Splunk</a></li>
+        
             <li><a class="toctree-l3" href="#single-sign-on-sso">Single Sign On (SSO)</a></li>
         
             <li><a class="toctree-l3" href="#application-services-architecture-microservice-architecture">Application Services Architecture (microservice architecture)</a></li>
         
             <li><a class="toctree-l3" href="#project-process">Project Process</a></li>
+        
+            <li><a class="toctree-l3" href="#microservice-registry">Microservice Registry</a></li>
         
         </ul>
     
@@ -186,7 +198,7 @@
 <p>The technology stack used in creating ODOS Confrence Room Reservation System are:</p>
 </li>
 </ul>
-<h4 id="jhipster-gatewayui-technology-stack">Jhipster Gateway/UI technology stack</h4>
+<h4 id="gatewayui-technology-stack">Gateway/UI technology stack</h4>
 <ul>
 <li>Angular-5</li>
 <li>Responsive Web Design with Twitter Bootstrap</li>
@@ -196,7 +208,7 @@
 <li>Build, optimization and live reload with Webpack</li>
 <li>Testing with Karma, Headless Chrome and Protractor</li>
 </ul>
-<h4 id="jhipster-technology-stack-on-the-server-side">Jhipster technology stack on the server side</h4>
+<h4 id="technology-stack-on-the-server-side">Technology stack on the server side</h4>
 <p>A complete Spring application:</p>
 <ul>
 <li>Spring Boot for easy application configuration</li>
@@ -208,13 +220,13 @@
 <li>Database updates with Liquibase</li>
 <li>Elasticsearch support for search capabilities on top of the database</li>
 </ul>
-<h4 id="jhipster-microservices-registry">Jhipster Microservices Registry</h4>
+<h4 id="microservices-registry">Microservices Registry</h4>
 <ul>
 <li>Service discovery using Netflix Eureka</li>
 <li>Zipkin to trace HTTP requests throughout your services</li>
 <li>Elastalert to get alerted when an issue occurs</li>
 </ul>
-<h4 id="jhipster-console">Jhipster Console</h4>
+<h4 id="metrics-console">Metrics Console</h4>
 <ul>
 <li>Monitoring with Metrics and the ELK Stack</li>
 <li>Caching with ehcache (local cache), hazelcast</li>
@@ -265,6 +277,10 @@
 <p>To build a jar file and run that jar issue the commands; ./gradlew -Pprod clean bootRepackage. And now just execute java -jar build/libs/*.war –spring.profiles.active=prod.</p>
 </li>
 </ul>
+<h2 id="odos-conference-room-reservation-web-application-overview">ODOS Conference Room Reservation Web Application Overview</h2>
+<p>Here is the overview of the Conference Room Reservation web application
+????? replace the picture with the new one ??????</p>
+<p><a href="./assets/images/Application_landing_page.png"><img alt="USCIS" src="./assets/images/Application_landing_page.png" /></a></p>
 <h2 id="application-metrics">Application Metrics</h2>
 <p>Here is the view of the application metrics</p>
 <p><a href="./assets/images/monitoringscreen.png"><img alt="USCIS" src="./assets/images/monitoringscreen.png" /></a></p>
@@ -277,7 +293,30 @@
 <p><a href="./assets/images/odos_crrs_er_diagram.png"><img alt="USCIS" src="./assets/images/odos_crrs_er_diagram.png" /></a></p>
 <h2 id="pipeline">Pipeline</h2>
 <p>We used Jenkins Pipeline</p>
-<p><a href="./assets/images/pipeline_image.png"><img alt="USCIS" src="./assets/images/pipeline_image.png" /></a></p>
+<p><a href="http://odos.lassiterdynamics.com:8080/">http://odos.lassiterdynamics.com:8080/</a></p>
+<p><a href="./assets/images/ODOS_pipeline.png"><img alt="USCIS" src="./assets/images/ODOS_pipeline.png" /></a></p>
+<p>????
+????</p>
+<h2 id="sonarqube">SonarQube</h2>
+<p>We used SonarQube for quality code analysis</p>
+<p><a href="http://odos.lassiterdynamics.com:9000/projects?sort=-analysis_date">http://odos.lassiterdynamics.com:9000/projects?sort=-analysis_date</a></p>
+<p><a href="./assets/images/SonarQube.png"><img alt="USCIS" src="./assets/images/SonarQube.png" /></a></p>
+<p>????
+????</p>
+<h2 id="nexus-repository-manager">Nexus Repository Manager</h2>
+<p>We used Nexus Repository Manager for all dependencies and artifacts</p>
+<p><a href="http://nexus.lassiterdynamics.com:8081/#browse/browse">http://nexus.lassiterdynamics.com:8081/#browse/browse</a></p>
+<p><a href="./assets/images/Nexus_Repository_Manager.png"><img alt="USCIS" src="./assets/images/Nexus_Repository_Manager.png" /></a></p>
+<p>????
+????</p>
+<h2 id="twistlock">Twistlock</h2>
+<p>We used Twistlock for scanning containers and it is integrated with Jenkins jobs</p>
+<p><a href="http://security.lassiterdynamics.com:8081/#!/dashboard">http://security.lassiterdynamics.com:8081/#!/dashboard</a></p>
+<p><a href="./assets/images/Twistlock.png"><img alt="USCIS" src="./assets/images/Twistlock.png" /></a></p>
+<h2 id="splunk">Splunk</h2>
+<p>We used Splunk for log managment ???????? log forwarding need to be completed ?????????</p>
+<p><a href="http://odos.lassiterdynamics.com:8000/en-US/app/search/datasets">http://odos.lassiterdynamics.com:8000/en-US/app/search/datasets</a></p>
+<p><a href="./assets/images/Splunk.png"><img alt="USCIS" src="./assets/images/Splunk.png" /></a></p>
 <p>????
 ????</p>
 <h2 id="single-sign-on-sso">Single Sign On (SSO)</h2>
@@ -299,7 +338,20 @@
 <h4 id="jira-kanban-board">JIRA Kanban board</h4>
 <p><a href="https://uscisodos2.atlassian.net/secure/RapidBoard.jspa?rapidView=2&amp;projectKey=ODOS&amp;selectedIssue=ODOS-26">JIRA Kanban board</a></p>
 <p><a href="https://uscisodos2.atlassian.net/secure/RapidBoard.jspa?rapidView=2&amp;projectKey=ODOS&amp;selectedIssue=ODOS-26">https://uscisodos2.atlassian.net/secure/RapidBoard.jspa?rapidView=2&amp;projectKey=ODOS&amp;selectedIssue=ODOS-26</a></p>
-<p><img alt="USCIS" src="./assets/images/Kanban_board.png" />](assets/images/Kanban_board.png)</p>
+<p><a href="./assets/images/Kanban_board.png"><img alt="USCIS" src="./assets/images/Kanban_board.png" /></a></p>
+<h2 id="microservice-registry">Microservice Registry</h2>
+<p>Here is the microservice registering in action registering both the backend microservice and UI microservice of the confrence room reservation web app</p>
+<p><a href="./assets/images/Microservices_registry.png"><img alt="USCIS" src="./assets/images/Microservices_registry.png" /></a></p>
+<p>Application instances displays both of ODOS confrence room reservation web apps services</p>
+<p><a href="./assets/images/application_instance.png"><img alt="USCIS" src="./assets/images/application_instance.png" /></a></p>
+<p>ODOS registry Health check displays the running status of each of the service registry components such as Eureka, Hystrix etc.</p>
+<p><a href="./assets/images/Health_checks.png"><img alt="USCIS" src="./assets/images/Health_checks.png" /></a></p>
+<p>ODOS registry Configuration displays each service active spring configuration</p>
+<p><a href="./assets/images/Spring_configuration.png"><img alt="USCIS" src="./assets/images/Spring_configuration.png" /></a></p>
+<p>ODOS registry uses the registeries "view logs" page</p>
+<p><a href="./assets/images/Logs.png"><img alt="USCIS" src="./assets/images/Logs.png" /></a></p>
+<p>ODOS registry uses swagger for API managment, listed are the API's exposed</p>
+<p><a href="./assets/images/Swagger.png"><img alt="USCIS" src="./assets/images/Swagger.png" /></a></p>
               
             </div>
           </div>
@@ -349,5 +401,5 @@
 
 <!--
 MkDocs version : 0.17.3
-Build Date UTC : 2018-04-18 07:14:57
+Build Date UTC : 2018-04-18 22:47:39
 -->
