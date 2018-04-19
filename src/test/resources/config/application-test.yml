@@ -50,7 +50,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:postgresql://${databaseHost:localhost}:${databasePort:5432}/${databaseName:odos_crrs_svc}?stringtype=unspecified
         username: ${databaseAppRole:odos_crrs_ui_app}
-        password: ${databaseAppPassword:0d0sP455}
+        password: ${databaseAppPassword}
         tomcat:
           validation-query: SELECT 1
         driverClassName: org.postgresql.Driver

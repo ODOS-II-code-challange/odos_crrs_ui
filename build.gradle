@@ -128,6 +128,7 @@ task cucumberTestReport(type: TestReport) {
 }
 
 tasks.withType(Test) {
+	environment "databasePassword", "${databasePassword}"
 	environment "databaseAppPassword", "${databaseAppPassword}"
 	environment "databaseHost", "${databaseHost}"
 }
