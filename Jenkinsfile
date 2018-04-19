@@ -23,6 +23,18 @@ pipeline {
                 }
             }
         }
+        stage('liquibase') {
+		  steps {
+		  	script{
+		      Common.slack 'Running liquibase baseline and update...'
+		      withCredentials([usernamePassword(credentialsId: 'TEST_DB_USER_PASS', passwordVariable: 'TEST_DB_PASS', usernameVariable: 'TEST_DB_USER')]) {
+		      sh """
+		      ./gradlew baseline liquibaseUpdate -PdatabaseHost=${TEST_DB_HOST} -PdatabaseAdmin=${TEST_DB_USER} -PdatabasePassword=${TEST_DB_PASS}
+		      """
+		        }
+		      }
+		    }
+		}
         stage('Sonar Scan') {
           steps {
             script{

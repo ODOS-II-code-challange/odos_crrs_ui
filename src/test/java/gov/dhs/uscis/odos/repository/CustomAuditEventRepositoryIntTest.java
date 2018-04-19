@@ -1,40 +1,38 @@
 package gov.dhs.uscis.odos.repository;
 
-import gov.dhs.uscis.odos.OdosCrrsUiApp;
-import gov.dhs.uscis.odos.config.Constants;
-import gov.dhs.uscis.odos.config.audit.AuditEventConverter;
-import gov.dhs.uscis.odos.domain.PersistentAuditEvent;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.audit.AuditEvent;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockHttpSession;
-import org.springframework.security.web.authentication.WebAuthenticationDetails;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
+import static gov.dhs.uscis.odos.repository.CustomAuditEventRepository.EVENT_DATA_COLUMN_MAX_LENGTH;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import javax.servlet.http.HttpSession;
 import java.time.Instant;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static gov.dhs.uscis.odos.repository.CustomAuditEventRepository.EVENT_DATA_COLUMN_MAX_LENGTH;
+import javax.servlet.http.HttpSession;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.audit.AuditEvent;
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockHttpSession;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
+import org.springframework.transaction.annotation.Transactional;
+
+import gov.dhs.uscis.odos.base.test.BaseIntegrationTest;
+import gov.dhs.uscis.odos.config.Constants;
+import gov.dhs.uscis.odos.config.audit.AuditEventConverter;
+import gov.dhs.uscis.odos.domain.PersistentAuditEvent;
 
 /**
  * Test class for the CustomAuditEventRepository class.
  *
  * @see CustomAuditEventRepository
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = OdosCrrsUiApp.class)
+
 @Transactional
-public class CustomAuditEventRepositoryIntTest {
+public class CustomAuditEventRepositoryIntTest extends BaseIntegrationTest {
 
     @Autowired
     private PersistenceAuditEventRepository persistenceAuditEventRepository;

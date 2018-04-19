@@ -127,6 +127,11 @@ task cucumberTestReport(type: TestReport) {
     reportOn cucumberTest
 }
 
+tasks.withType(Test) {
+	environment "databaseAppPassword", "${databaseAppPassword}"
+	environment "databaseHost", "${databaseHost}"
+}
+
 apply from: 'gradle/docker.gradle'
 apply from: 'gradle/sonar.gradle'
 apply from: 'gradle/liquibase.gradle'
