@@ -14,10 +14,13 @@ import { OdosCrrsUiSharedModule, UserRouteAccessService, CapitalizeFirstPipe } f
 import { OdosCrrsUiAppRoutingModule} from './app-routing.module';
 import { OdosCrrsUiHomeModule } from './home/home.module';
 import { OdosCrrsUiConferenceRoomModule } from './conference-room/conference-room.module';
+import { OdosCrrsUiReservationModule } from './reservation/reservation.module';
 import { OdosCrrsUiAdminModule } from './admin/admin.module';
 import { OdosCrrsUiAccountModule } from './account/account.module';
 import { OdosCrrsUiEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule }  from '@angular/common';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
     JhiMainComponent,
@@ -36,9 +39,13 @@ import {
         OdosCrrsUiSharedModule,
         OdosCrrsUiHomeModule,
         OdosCrrsUiConferenceRoomModule,
+        OdosCrrsUiReservationModule,
         OdosCrrsUiAdminModule,
         OdosCrrsUiAccountModule,
         OdosCrrsUiEntityModule,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [

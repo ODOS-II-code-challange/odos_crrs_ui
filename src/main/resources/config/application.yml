@@ -16,7 +16,7 @@
 
 eureka:
     client:
-        enabled: false
+        enabled: true
         healthcheck:
             enabled: true
         fetch-registry: true
@@ -36,7 +36,7 @@ eureka:
             version: ${info.project.version}
 ribbon:
     eureka:
-        enabled: false
+        enabled: true
 # See http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
 zuul: # those values must be configured depending on the application specific needs
     host:
