@@ -9,52 +9,76 @@
     </div>
 
     <div class="container-fluid">
-        <div class="reservation_steps">
-            <span style="display: inline-block;" class="reservation_step">
-                <div class="reservation_step_img">
-                    <div class="reservation_step_img_text">
-                        <strong>1</strong>
-                    </div>
-                    <div class="reservation_step_name">Reserve Information</div>
-                </div>
-            </span>
-            <span style="display: inline-block;" class="reservation_step">
-                <div class="reservation_step_img">
-                    <div class="reservation_step_img_text">
-                        <strong>2</strong>
-                    </div>
-                    <div class="reservation_step_name">Reservation Date</div>
-                </div>
-            </span>
-            <span style="display:inline-block;" class="reservation_step">
-                <div class="reservation_step_img">
-                    <div class="reservation_step_img_text">
-                        <strong>3</strong>
-                    </div>
-                    <div class="reservation_step_name">Reservtion Completed</div>
-                </div>
-            </span>
-        </div>
+        <div id="reservation-code">
+            <p></p>
 
-        <p></p>
-
-        <div class="row col-xs-12" style="margin-top: 15px;padding: 0;">
-            <div class="col-md-8">
-                <form id="reservation_form" name="reservation_form" action="" role="form" method="post">
-                    <div>
-
+            <div class="reservation_steps">
+                <span style="display: inline-block;" class="reservation_step">
+                    <div class="reservation_step_img">
+                        <div class="reservation_step_img_text">
+                            <strong>1</strong>
+                        </div>
+                        <div class="reservation_step_name">Reservation Details</div>
                     </div>
-
-                    <div class="form-button">
-                        <label for="submit_form">&nbsp;</label>
-                        <input style="border-radius: 5px;" type="submit" class="btn btn-primary btn-sm" value="Make reservation" name="submit_form" id="submit_form">
+                </span>
+                <span style="display: inline-block;" class="reservation_step">
+                    <div class="reservation_step_img">
+                        <div class="reservation_step_img_text">
+                            <strong>2</strong>
+                        </div>
+                        <div class="reservation_step_name">Reservation Date</div>
                     </div>
-                </form>
+                </span>
+                <span style="display:inline-block;" class="reservation_step">
+                    <div class="reservation_step_img">
+                        <div class="reservation_step_img_text">
+                            <strong>3</strong>
+                        </div>
+                        <div class="reservation_step_name">Reservation Completed</div>
+                    </div>
+                </span>
             </div>
-            <div class="col-md-4">
-
+            <br>
+            <br>
+            <div class="row col-xs-12" style="margin-top: 15px;padding: 0;">
+                <div class="col-md-8">
+                    <h3>Reservation Details</h3>
+                    <form [formGroup]="reservationform">
+                        <div class="personal_details"> 
+                            
+                            <div class="form-group planyo-form-item-group  col-md-8" id="row_first">
+                                <label for="firstName" class="control-label">First name<em>*</em></label>
+                                <input class="with-status-border form-control" maxlength="80" type="text" name="firstName" id="firstName" formControlName="firstName">
+                            </div>
+                            <div class="form-group planyo-form-item-group  col-md-8" id="row_last">
+                                <label for="lastName" class="control-label">Last name<em>*</em></label>
+                                <input class="with-status-border form-control" maxlength="80" type="text" name="lastName" id="lastName" formControlName="lastName">
+                            </div>
+                            <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
+                                <label for="email" class="control-label">Email<em>*</em></label>
+                                <input type="email" class="with-status-border form-control" maxlength="80" type="text" name="email" id="email" formControlName="email">
+                            </div>
+                            <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
+                                <label for="conferenceTitle" class="control-label">Conference Title<em>*</em></label>
+                                <input type="text" class="with-status-border form-control" maxlength="80" type="text" name="conferenceTitle" id="conferenceTitle" formControlName="conferenceTitle">
+                            </div>
+                            <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
+                                <label for="conferenceDescription" class="control-label">Conference Description<em>*</em></label>
+                                <textarea type="text" class="with-status-border form-control" maxlength="80" type="text" name="conferenceDescription" id="conferenceDescription" formControlName="conferenceDescription"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-button">
+                            <label for="submit_form">&nbsp;</label>
+                            <input style="border-radius: 5px;" type="submit" class="btn btn-primary btn-sm" value="Continue" name="submit_form" id="submit_form">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+        
+                </div>
+        
             </div>
-
         </div>
+        
     </div>
 </div>
