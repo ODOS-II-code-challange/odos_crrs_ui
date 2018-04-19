@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { OdosCrrsUiSharedModule } from '../shared';
 import { CONFERENCE_ROOM_ROUTE, ConferenceRoomComponent } from "./";
-import {ConferenceRoomService} from "./conference-room.service";
+import { ConferenceRoomService } from './conference-room.service';
 
 @NgModule({
     imports: [
