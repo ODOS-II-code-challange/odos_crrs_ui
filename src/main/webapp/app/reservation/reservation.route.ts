@@ -3,7 +3,7 @@ import { Route } from '@angular/router';
 import { ReservationComponent } from './';
 
 export const RESERVATION_ROUTE: Route = {
-    path: 'reservation/:id',
+    path: 'reservation/:roomName',
     component: ReservationComponent,
     data: {
         authorities: [],
