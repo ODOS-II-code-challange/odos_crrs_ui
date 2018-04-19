@@ -12,11 +12,11 @@
             </div>
             <div class="col-md-6">
                 <div class="lib-row lib-header">
-                    <p>{{ building.building_name }}</p>
+                    <p>{{ building.buildingName }}</p>
                     <hr>
 
                     <div class="lib-row lib-desc">
-                        {{ building.building_description }}
+                        {{ building.buildingDesc }}
                     </div>
                 </div>
 
@@ -32,16 +32,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let conf of building.conference_rooms">
-                                <td>{{ conf.room_name }}</td>
-                                <td>{{ conf.room_number }}</td>
+                            <tr *ngFor="let conf of building.conferenceRooms">
+                                <td>{{ conf.roomName }}</td>
+                                <td>{{ conf.roomNum }}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div class="lib-row">
-                    <a routerLink="/rooms/{{ building.id }}">
+                    <a routerLink="/rooms/{{ buildingId }}">
                         <input style="border-radius: 5px;" class="btn btn-primary btn-lg" type="submit" name="reserve" id="reserve" value="More Details">
                     </a>
                 </div>
