@@ -6,9 +6,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgJhipsterModule } from 'ng-jhipster';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CookieModule } from 'ngx-cookie';
-import {ChartModule} from 'primeng/chart';
-import { TabsModule } from 'ngx-bootstrap';
-import { BsDropdownModule } from 'ngx-bootstrap';
 
 @NgModule({
     imports: [
@@ -18,18 +15,12 @@ import { BsDropdownModule } from 'ngx-bootstrap';
             alertAsToast: false,
         }),
         InfiniteScrollModule,
-        ChartModule,
-        BsDropdownModule.forRoot(),
-        TabsModule.forRoot(),
         CookieModule.forRoot()
     ],
     exports: [
         FormsModule,
         HttpClientModule,
         CommonModule,
-        // ChartModule,
-        // TabsModule,
-        // BsDropdownModule,
         NgbModule,
         NgJhipsterModule,
         InfiniteScrollModule
