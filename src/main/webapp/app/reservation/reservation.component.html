@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
                                     <label for="email" class="control-label">Email<em>*</em></label>
-                                    <input type="email" class="with-status-border form-control" maxlength="80" type="text" name="email" id="email" formControlName="email">
+                                    <input type="email" class="with-status-border form-control" maxlength="80"  name="email" id="email" formControlName="email">
                                 </div>
                                 <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
                                     <label for="conferenceTitle" class="control-label">Conference Title<em>*</em></label>
@@ -89,7 +89,7 @@
                                 </div>
                                 <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
                                     <label for="conferenceDescription" class="control-label">Conference Description<em>*</em></label>
-                                    <textarea type="text" class="with-status-border form-control" maxlength="80" type="text" name="conferenceDescription" id="conferenceDescription" formControlName="conferenceDescription"></textarea>
+                                    <textarea type="text" class="with-status-border form-control" maxlength="80" name="conferenceDescription" id="conferenceDescription" formControlName="conferenceDescription"></textarea>
                                 </div>
                             </div>
                             <div class="form-button">
@@ -104,7 +104,7 @@
                         <form [formGroup]="reservationTimeForm">
                             <div class="personal_details">                     
                                 <div class="form-group planyo-form-item-group  col-md-8" id="row_startdate">
-                                    <label for="startDate" class="control-label">Start Date<em>*</em></label>
+                                    <label for="startDate" class="control-label">Date<em>*</em></label>
                                     <input type="date" class="with-status-border form-control" maxlength="80" name="startDate" id="startDate" formControlName="startDate">
                                 </div>
                                 <br>
@@ -119,6 +119,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <br>
+                            <br>
                             <div class="form-button">
                                 <label for="submit_form">&nbsp;</label>
                                 <input style="border-radius: 5px;" type="submit" class="btn btn-primary btn-sm" value="Make Reservation" name="submit_form" id="submit_form"(click)="saveReservationTime()">
@@ -134,10 +136,8 @@
                 </div>
                 <div class="col-md-4">
         
-                </div>
-        
+                </div>     
             </div>
-        </div>
-        
+        </div>        
     </div>
 </div>

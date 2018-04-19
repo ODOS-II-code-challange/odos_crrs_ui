@@ -26,9 +26,6 @@ export class ReservationComponent implements OnInit {
   isReservationTimeForm: boolean = false;
   isReservationCompleteForm: boolean = false;
 
-  time = {hour: 13, minute: 30};
-  meridian = true;
-
   constructor() { }
 
   ngOnInit() { 
@@ -41,38 +38,32 @@ export class ReservationComponent implements OnInit {
     });
 
     this.reservationTimeForm = new FormGroup({
-        startDate: new FormControl('',Validators.required),
+        Date: new FormControl('',Validators.required),
         startTime: new FormControl('', Validators.required),
         endTime: new FormControl('', Validators.required)
     });
-  }
-  reservationDetail={
-    'firstName':'',
-    'lastName':'',
-    'email':'',
-    'conferenceTitle':'',
-    'conferenceDescription':''
-  }
-  reservationTime = {
-    'startDate':'',
-    'startTime':'',
-    'endTime':''
+
+    
   }
 
   saveReservationDetails(){
-    // this.reservationDetail.firstName = this.firstName.value;
-    // this.reservationDetail.lastName = this.lastName.value;
-    // this.reservationDetail.email = this.email.value;
-    // this.reservationDetail.conferenceTitle = this.conferenceTitle.value;
-    // this.reservationDetail.conferenceDescription = this.conferenceDescription.value;
+
+    console.log("reservation detail : ", this.reservationDetailForm.getRawValue());
 
     this.isReservationDetailForm = false;
     this.isReservationTimeForm = true;
   }
   saveReservationTime(){
-    // this.reservationTime.startDate = this.startDate.value;
-    // this.reservationTime.startTime = this.startTime.value;
-    // this.reservationTime.endTime = this.endTime.value;
+  
+  
+    // var x = this.reservationDetailForm.get('startTime') - this.reservationDetailForm.get('endTime');
+    console.log("reservation detail : ", this.reservationTimeForm.getRawValue());
+    let start = +this.reservationTimeForm.get('startTime').value;
+    let end = +this.reservationTimeForm.get('startTime').value;
+    let result =(end - start)*60;
+    console.log("Start time: " + start);
+    console.log("Start time: " + end);
+    console.log("reservation start time : ", +this.reservationTimeForm.get('startTime').value - this.reservationTimeForm.get('startTime').value);
 
     this.isReservationTimeForm = false;
     this.isReservationCompleteForm = true;
@@ -80,8 +71,8 @@ export class ReservationComponent implements OnInit {
   sumbitReservation(){
 
   }
-  toggleMeridian(){
-    this.meridian = !this.meridian;
-
+  disabled(date, mode){
+    return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
   }
+
 }
