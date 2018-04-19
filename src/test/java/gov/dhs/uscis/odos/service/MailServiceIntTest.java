@@ -1,37 +1,36 @@
 package gov.dhs.uscis.odos.service;
-import gov.dhs.uscis.odos.config.Constants;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.verify;
 
-import gov.dhs.uscis.odos.OdosCrrsUiApp;
-import gov.dhs.uscis.odos.domain.User;
-import io.github.jhipster.config.JHipsterProperties;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
-import org.mockito.MockitoAnnotations;
-import org.mockito.Spy;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.MessageSource;
-import org.springframework.mail.MailSendException;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.thymeleaf.spring4.SpringTemplateEngine;
+import java.io.ByteArrayOutputStream;
 
 import javax.mail.Multipart;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import java.io.ByteArrayOutputStream;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.*;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
+import org.mockito.MockitoAnnotations;
+import org.mockito.Spy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.mail.MailSendException;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.thymeleaf.spring4.SpringTemplateEngine;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = OdosCrrsUiApp.class)
-public class MailServiceIntTest {
+import gov.dhs.uscis.odos.base.test.BaseIntegrationTest;
+import gov.dhs.uscis.odos.config.Constants;
+import gov.dhs.uscis.odos.domain.User;
+import io.github.jhipster.config.JHipsterProperties;
+
+
+public class MailServiceIntTest extends BaseIntegrationTest {
 
     @Autowired
     private JHipsterProperties jHipsterProperties;

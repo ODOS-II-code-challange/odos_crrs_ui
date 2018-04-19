@@ -1,7 +1,38 @@
 package gov.dhs.uscis.odos.web.rest;
 
-import gov.dhs.uscis.odos.OdosCrrsUiApp;
-import gov.dhs.uscis.odos.config.CacheConfiguration;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.hamcrest.Matchers.hasItem;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.time.Instant;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.EntityManager;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
+import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
+import org.springframework.http.MediaType;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
+
+import gov.dhs.uscis.odos.base.test.BaseIntegrationTest;
 import gov.dhs.uscis.odos.domain.Authority;
 import gov.dhs.uscis.odos.domain.User;
 import gov.dhs.uscis.odos.repository.UserRepository;
@@ -12,40 +43,14 @@ import gov.dhs.uscis.odos.service.dto.UserDTO;
 import gov.dhs.uscis.odos.service.mapper.UserMapper;
 import gov.dhs.uscis.odos.web.rest.errors.ExceptionTranslator;
 import gov.dhs.uscis.odos.web.rest.vm.ManagedUserVM;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.cache.CacheManager;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.EntityManager;
-import java.time.Instant;
-import java.util.*;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.hasItem;
-import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
  * Test class for the UserResource REST controller.
  *
  * @see UserResource
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = OdosCrrsUiApp.class)
-public class UserResourceIntTest {
+
+public class UserResourceIntTest extends BaseIntegrationTest {
 
     private static final String DEFAULT_LOGIN = "johndoe";
     private static final String UPDATED_LOGIN = "jhipster";
