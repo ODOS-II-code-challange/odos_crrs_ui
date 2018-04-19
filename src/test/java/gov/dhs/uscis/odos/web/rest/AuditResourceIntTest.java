@@ -1,41 +1,40 @@
 package gov.dhs.uscis.odos.web.rest;
 
-import gov.dhs.uscis.odos.OdosCrrsUiApp;
-import gov.dhs.uscis.odos.config.audit.AuditEventConverter;
-import gov.dhs.uscis.odos.domain.PersistentAuditEvent;
-import gov.dhs.uscis.odos.repository.PersistenceAuditEventRepository;
-import gov.dhs.uscis.odos.service.AuditEventService;
+import static org.hamcrest.Matchers.hasItem;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.time.Instant;
+
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.Instant;
-import java.time.format.DateTimeFormatter;
-
-import static org.hamcrest.Matchers.hasItem;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import gov.dhs.uscis.odos.base.test.BaseIntegrationTest;
+import gov.dhs.uscis.odos.config.audit.AuditEventConverter;
+import gov.dhs.uscis.odos.domain.PersistentAuditEvent;
+import gov.dhs.uscis.odos.repository.PersistenceAuditEventRepository;
+import gov.dhs.uscis.odos.service.AuditEventService;
 
 /**
  * Test class for the AuditResource REST controller.
  *
  * @see AuditResource
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = OdosCrrsUiApp.class)
+
 @Transactional
-public class AuditResourceIntTest {
+public class AuditResourceIntTest extends BaseIntegrationTest {
 
     private static final String SAMPLE_PRINCIPAL = "SAMPLE_PRINCIPAL";
     private static final String SAMPLE_TYPE = "SAMPLE_TYPE";

@@ -1,39 +1,35 @@
 package gov.dhs.uscis.odos.service;
 
-import gov.dhs.uscis.odos.OdosCrrsUiApp;
-import gov.dhs.uscis.odos.config.Constants;
-import gov.dhs.uscis.odos.domain.User;
-import gov.dhs.uscis.odos.repository.UserRepository;
-import gov.dhs.uscis.odos.service.dto.UserDTO;
-import gov.dhs.uscis.odos.service.util.RandomUtil;
-
-import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.transaction.annotation.Transactional;
+
+import gov.dhs.uscis.odos.base.test.BaseIntegrationTest;
+import gov.dhs.uscis.odos.config.Constants;
+import gov.dhs.uscis.odos.domain.User;
+import gov.dhs.uscis.odos.repository.UserRepository;
+import gov.dhs.uscis.odos.service.dto.UserDTO;
+import gov.dhs.uscis.odos.service.util.RandomUtil;
 
 /**
  * Test class for the UserResource REST controller.
  *
  * @see UserService
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = OdosCrrsUiApp.class)
+
 @Transactional
-public class UserServiceIntTest {
+public class UserServiceIntTest extends BaseIntegrationTest {
 
     @Autowired
     private UserRepository userRepository;

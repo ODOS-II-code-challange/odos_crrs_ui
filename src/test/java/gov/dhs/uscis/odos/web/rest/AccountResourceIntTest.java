@@ -1,56 +1,56 @@
 package gov.dhs.uscis.odos.web.rest;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Matchers.anyObject;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.time.Instant;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
+
+import gov.dhs.uscis.odos.base.test.BaseIntegrationTest;
 import gov.dhs.uscis.odos.config.Constants;
-import gov.dhs.uscis.odos.OdosCrrsUiApp;
 import gov.dhs.uscis.odos.domain.Authority;
 import gov.dhs.uscis.odos.domain.User;
 import gov.dhs.uscis.odos.repository.AuthorityRepository;
 import gov.dhs.uscis.odos.repository.UserRepository;
 import gov.dhs.uscis.odos.security.AuthoritiesConstants;
 import gov.dhs.uscis.odos.service.MailService;
+import gov.dhs.uscis.odos.service.UserService;
 import gov.dhs.uscis.odos.service.dto.UserDTO;
 import gov.dhs.uscis.odos.web.rest.errors.ExceptionTranslator;
 import gov.dhs.uscis.odos.web.rest.vm.KeyAndPasswordVM;
 import gov.dhs.uscis.odos.web.rest.vm.ManagedUserVM;
-import gov.dhs.uscis.odos.service.UserService;
-import org.apache.commons.lang3.RandomStringUtils;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.transaction.annotation.Transactional;
-import java.time.Instant;
-import java.time.LocalDate;
-
-import java.util.*;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.hasItem;
-import static org.mockito.Matchers.anyObject;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
  * Test class for the AccountResource REST controller.
  *
  * @see AccountResource
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = OdosCrrsUiApp.class)
-public class AccountResourceIntTest {
+
+public class AccountResourceIntTest extends BaseIntegrationTest {
 
     @Autowired
     private UserRepository userRepository;
