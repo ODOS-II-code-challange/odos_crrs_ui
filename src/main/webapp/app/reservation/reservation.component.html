@@ -1,10 +1,9 @@
 <div class="row">
     <div class="col-md-1">
         <br>
-        <div (click)="goBack()"><i class="fa fa-arrow-left" style="font-size:48px;color:rgb(77, 113, 190);padding-right: 0px;"></i></i></div>
+        <div (click)="goBack()"><i class="fa fa-arrow-left" style="font-size:38px;color:rgb(77, 113, 190);padding-left: 120px;"></i></i></div>
      </div>
      <div class="content col-md-11">
-
         <div class="breadcrumb breadcrumb-option">
             <div class="navigation">
                 <div class="nav-variant-breadcrumb">
@@ -95,7 +94,6 @@
                                             <label for="conferenceDescription" class="control-label">Conference Description<em>*</em></label>
                                             <textarea type="text" class="with-status-border form-control" maxlength="80" name="conferenceDescription" id="conferenceDescription" formControlName="conferenceDescription"></textarea>
                                         </div>
-                                        <div class="input-group "><input class="with-status-border form-control" type="text" id="start_date" name="start_date" value="" onchange="planyo_dates_changed();" onfocus="planyo_close_calendar();planyo_show_calendar('start_date','planyo_dates_changed();');" onmousedown="var e=arguments[0] || window.event;e.stopPropagation();" onclick="var e=arguments[0] || window.event;e.stopPropagation();"><span class="input-group-addon" onclick="planyo_close_calendar();planyo_show_calendar('start_date','planyo_dates_changed();');"> <a class="planyo-cal-icon" target="_self" href="javascript:planyo_show_calendar('start_date','planyo_dates_changed();');" id="start_datecalref">&nbsp;</a></span></div>
                                     </div>
                                     <div class="form-button">
                                         <label for="submit_form">&nbsp;</label>
@@ -135,9 +133,10 @@
                            <div *ngIf = "isReservationCompleteForm">
                                <br>
                                <br>
-                                <h1>Thank you, {{reservation_info['firstName']}} {{reservation_info['lastName']}}</h1>
-                                <h1>Successfully reserved the Conference Room({{reservation_info['conferenceRoomId']}})</h1>
-                                <h1>ON {{reservation_info['date']}} <br> Form  {{reservation_info['roomScheduleStartTime']}} - {{reservation_info['roomScheduleEndTime']}}</h1>
+                                <p>Thank you, {{reservation_info['firstName']}} {{reservation_info['lastName']}}</p>
+                                <p>Successfully Reserved the Conference Room({{reservation_info['conferenceRoomId']}})</p>
+                                <p>ON {{reservation_info['date']}} </p> 
+                                <p>Form {{reservation_info['roomScheduleStartTime']}} - {{reservation_info['roomScheduleEndTime']}}</p>
                             </div>
                         </div>
                         <div class="col-md-3">

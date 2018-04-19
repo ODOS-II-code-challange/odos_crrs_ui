@@ -4,6 +4,7 @@ import { FormGroup, FormArray, FormBuilder,
   Validators,ReactiveFormsModule, FormControl  } from '@angular/forms';
 import { ReservationService } from './reservation.service';
 import { HttpErrorResponse } from '@angular/common/http';
+
 import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/constants/error.constants';
 // import { LOGIN_ALREADY_USED_TYPE,EMAIL_ALREADY_USED_TYPE } from 'src/main/webapp/app/shared';
 
@@ -51,7 +52,7 @@ import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/cons
           lastName: new FormControl('', Validators.required),
           email: new FormControl('', [Validators.email, Validators.required]),
           conferenceTitle: new FormControl('', Validators.required),
-          conferenceDescription: new FormControl('', Validators.required)
+          conferenceDescription: new FormControl('')
       });
 
       this.reservationTimeForm = new FormGroup({
