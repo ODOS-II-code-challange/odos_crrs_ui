@@ -4,7 +4,7 @@ import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { SERVER_API_URL } from '../app.constants';
+import { CRRS_API_URL } from '../app.constants';
 import { BuildingInfo } from './home.model';
 
 @Injectable()
@@ -13,6 +13,6 @@ export class HomeService {
   constructor(private http: HttpClient) { }
 
   getAllBuildingData(){
-      return this.http.get<BuildingInfo[]>(SERVER_API_URL + 'api/buildings');
+      return this.http.get<BuildingInfo[]>(CRRS_API_URL + 'api/buildings');
   }
 }
