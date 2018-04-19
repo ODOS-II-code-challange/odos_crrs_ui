@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { OdosCrrsUiSharedModule } from '../shared';
 import { HOME_ROUTE, HomeComponent } from './';
+import {HomeService} from "./home.service";
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import { HOME_ROUTE, HomeComponent } from './';
     entryComponents: [
     ],
     providers: [
+        HomeService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
