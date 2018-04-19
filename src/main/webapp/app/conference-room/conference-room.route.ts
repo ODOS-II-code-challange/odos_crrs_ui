@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 
-import { ConferenceRoomComponent } from "./conference-room.component";
+import { ConferenceRoomComponent } from "./";
 
 export const CONFERENCE_ROOM_ROUTE: Route = {
     path: 'rooms/:id',

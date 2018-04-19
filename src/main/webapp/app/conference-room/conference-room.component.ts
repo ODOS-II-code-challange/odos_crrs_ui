@@ -8,7 +8,7 @@ import { Account, LoginModalService, Principal } from "../shared";
 @Component({
     selector: 'jhi-conference-room',
     templateUrl: './conference-room.component.html',
-    styles: [
+    styleUrls: [
       'conference-room.scss'
     ]
 
@@ -53,6 +53,7 @@ export class ConferenceRoomComponent implements OnInit {
     getBuildigInfo(building_number: Number){
 
         this.conference_room_names = ["KitKat", "Twix", "Mars", "M&Ms"];
+        this.selectedRoom = this.conference_room_names[0];
 
         this.building_info = {
             "building_number": building_number,
