@@ -3,10 +3,13 @@ import { RouterModule } from '@angular/router';
 
 import { OdosCrrsUiSharedModule } from '../shared';
 import { REPORT_ROUTE, ReportComponent } from './';
+import { DatepickerModule } from 'ngx-date-picker';
+import {ChartModule} from 'primeng/chart';
 
 @NgModule({
     imports: [
         OdosCrrsUiSharedModule,
+        ChartModule,
         RouterModule.forChild([ REPORT_ROUTE ])
     ],
     declarations: [
