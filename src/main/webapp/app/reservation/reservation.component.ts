@@ -63,24 +63,36 @@ import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/cons
       
     }
     reservation_info = {
+      'date':'',
+      'firstName':'',
+      'lastName':'',
       'requestorId':'',
       'roomScheduleStartTime':'',
       'roomScheduleEndTime':'',
       'conferenceTitle':'',
-      'conferenceRoomId': this.roomName,
+      'conferenceRoomId': ''
 
     }
 
     saveReservationDetails(){
       this.reservation_info.requestorId = this.reservationDetailForm.get('email').value;
       this.reservation_info.conferenceTitle = this.reservationDetailForm.get('conferenceTitle').value;
+      this.reservation_info.firstName = this.reservationDetailForm.get('firstName').value;
+      this.reservation_info.lastName = this.reservationDetailForm.get('lastName').value;
+      this.reservation_info.conferenceRoomId = this.roomName;
 
       this.isReservationDetailForm = false;
       this.isReservationTimeForm = true;
     }
     saveReservationTime(){
+      this.reservation_info.date = this.reservationTimeForm.get('startDate').value;
       this.reservation_info.roomScheduleStartTime = this.reservationTimeForm.get('startTime').value;
       this.reservation_info.roomScheduleEndTime = this.reservationTimeForm.get('endTime').value;
+
+      console.log("RESERVATION DETAILS: " + JSON.stringify(this.reservation_info));
+      // if(this.reservation_info.roomScheduleStartTime < 8:00){
+
+      // }
       this.service.postReservationData(this.reservation_info)
       .subscribe(()=>{
       }, (response)=> this.processError(response))
@@ -96,7 +108,10 @@ import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/cons
           this.errorEmailExists = 'ERROR';
       } else {
           this.error = 'ERROR';
+      }
     }
-  }
+    goBack() {
+      window.history.back();
+    }
 
 }
