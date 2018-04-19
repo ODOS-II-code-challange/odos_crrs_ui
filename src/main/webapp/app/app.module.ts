@@ -92,8 +92,7 @@ import { ReservationService } from './reservation/reservation.service';
             multi: true,
             deps: [
                 Injector
-            ],
-            providers: [ReservationService]
+            ]
         }
     ],
     bootstrap: [ JhiMainComponent ]
