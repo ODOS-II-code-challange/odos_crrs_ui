@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { OdosCrrsUiSharedModule } from '../shared';
 import { CONFERENCE_ROOM_ROUTE, ConferenceRoomComponent } from "./";
+import {ConferenceRoomService} from "./conference-room.service";
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import { CONFERENCE_ROOM_ROUTE, ConferenceRoomComponent } from "./";
     entryComponents: [
     ],
     providers: [
+        ConferenceRoomService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
