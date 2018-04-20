@@ -5,7 +5,7 @@ import { Router, ActivatedRoute, Params, Data } from '@angular/router';
 import { CalendarModule } from 'primeng/calendar';
 
 import { Account, LoginModalService, Principal } from "../shared";
-import { isSameDay, isSameMonth } from 'date-fns';
+import { ConferenceRoomService } from './conference-room.service';
 
 @Component({
     selector: 'jhi-conference-room',
@@ -23,15 +23,16 @@ export class ConferenceRoomComponent implements OnInit {
 
     account: Account;
     modalRef: NgbModalRef;
-    building_info: {};
-    conference_room_names = [];
+    buildingInfo= {};
     selectedRoom: string;
+    buildingName: string;
 
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
         private route: ActivatedRoute,
+        private conferenceRoomService: ConferenceRoomService,
         private router: Router
     ) {
         this.en = {
@@ -52,11 +53,13 @@ export class ConferenceRoomComponent implements OnInit {
 
 
     ngOnInit() {
-        this.route.params.subscribe(params => this.getBuildigInfo(params['id']));
+        this.route.params.subscribe((params: Params) => this.getBuildigInfo(params['id']));
         this.route.snapshot.data['type'];
+
         this.principal.identity().then((account) => {
             this.account = account;
         });
+
         this.registerAuthenticationSuccess();
     }
 
@@ -72,36 +75,17 @@ export class ConferenceRoomComponent implements OnInit {
         return this.principal.isAuthenticated();
     }
 
-    getBuildigInfo(building_number: Number) {
+    getBuildigInfo(buildingNumber: Number){
 
-        this.conference_room_names = ["KitKat", "Twix", "Mars", "M&Ms"];
-        this.selectedRoom = this.conference_room_names[0];
-
-        this.building_info = {
-            "building_number": building_number,
-            "building_name": "Headquarters",
-            "building_address": "20 New York Ave, NW Washington DC 20012-9023",
-            "building_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem harum in libero officiis, quos repellat velit! Alias animi dicta, dolorum, ipsum iure molestias obcaecati provident quaerat quo vitae voluptatem?",
-            "conference_room":
-                {
-                    "room_name": "KitKat",
-                    "room_number": 142,
-                    "room_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem harum in libero officiis, quos repellat velit! Alias animi dicta, dolorum,",
-                    "room_capacity": 10,
-                    "equipment": [{
-                        "equipment_name": "projector"
-                    },
-                    {
-                        "equipment_name": "audio"
-                    },
-                    {
-                        "equipment_name": "projector"
-                    }
-                    ]
-                }
-
-        }
-
+        this.conferenceRoomService.getBuildingData(buildingNumber).subscribe(
+            (response) => {
+                this.buildingInfo = response;
+                this.selectedRoom = this.buildingInfo['conferenceRooms'][0];
+            },
+            (error) => {
+                console.log(error);
+            }
+        )
     }
     
 }
