@@ -15,7 +15,8 @@ import { OdosCrrsUiAppRoutingModule} from './app-routing.module';
 import { OdosCrrsUiHomeModule } from './home';
 import { OdosCrrsUiConferenceRoomModule } from './conference-room';
 import { OdosCrrsUiReservationModule } from './reservation';
-import {OdosCrrsUiReportModule} from "./report";
+import { OdosCrrsUiReportModule } from "./report";
+import { OdosCrrsUiResourceManagerModule } from "./resource-manager";
 import { OdosCrrsUiAdminModule } from './admin/admin.module';
 import { OdosCrrsUiAccountModule } from './account/account.module';
 import { OdosCrrsUiEntityModule } from './entities/entity.module';
@@ -31,7 +32,6 @@ import {
     PageRibbonComponent,
     ErrorComponent
 } from './layouts';
-import { ReservationService } from './reservation/reservation.service';
 
 
 @NgModule({
@@ -43,6 +43,7 @@ import { ReservationService } from './reservation/reservation.service';
         OdosCrrsUiHomeModule,
         OdosCrrsUiConferenceRoomModule,
         OdosCrrsUiReservationModule,
+        OdosCrrsUiResourceManagerModule,
         OdosCrrsUiReportModule,
         OdosCrrsUiAdminModule,
         OdosCrrsUiAccountModule,
@@ -95,7 +96,7 @@ import { ReservationService } from './reservation/reservation.service';
             multi: true,
             deps: [
                 Injector
-            ]
+            ],
         }
     ],
     bootstrap: [ JhiMainComponent ]
