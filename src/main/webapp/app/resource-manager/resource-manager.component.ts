@@ -19,10 +19,9 @@ export class ResourceManagerComponent implements OnInit {
 
   resources = ["Building", "Conference Room", "Equipment"];
   ngOnInit() {
-    this.selectedResource = this.resources[0];
+     this.selectedResource = this.resources[0];
      this.getAllBuildings();
      this.getAllConferenceRooms();
-     this.equipmentsData();
   }
 
   getAllBuildings(){
