@@ -1,13 +1,13 @@
 package gov.dhs.uscis.odos.cucumber;
 
 import org.junit.runner.RunWith;
-
+import org.springframework.test.context.ActiveProfiles;
 
 import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
 
-@RunWith(Cucumber.class)
+@RunWith(SpringProfileCucumber.class)
 @CucumberOptions(plugin = "pretty", features = "src/test/features")
-public class CucumberTest  {
+@ActiveProfiles("test, no-liquibase")
+public class CucumberTest {
 
 }

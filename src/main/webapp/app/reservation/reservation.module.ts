@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { OdosCrrsUiSharedModule } from '../shared';
 import { RESERVATION_ROUTE, ReservationComponent } from './';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReservationService } from './reservation.service';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     entryComponents: [
     ],
     providers: [
+        ReservationService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

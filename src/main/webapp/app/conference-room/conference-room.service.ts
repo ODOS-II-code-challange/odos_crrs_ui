@@ -8,12 +8,12 @@ import { CRRS_API_URL } from '../app.constants';
 import { BuildingInfo } from './conference-room.model';
 
 @Injectable()
-export class HomeService {
+export class ConferenceRoomService {
 
     constructor(private http: HttpClient) { }
 
-    getAllConferenceRoomData(buildingId: string) : Observable<BuildingInfo[]>{
-        return this.http.get<BuildingInfo[]>( CRRS_API_URL + 'api/conference/' + buildingId);
+    getBuildingData(buildingId: Number) : Observable<BuildingInfo[]>{
+        return this.http.get<BuildingInfo[]>( CRRS_API_URL + 'api/buildings/' + buildingId);
     }
 
 }

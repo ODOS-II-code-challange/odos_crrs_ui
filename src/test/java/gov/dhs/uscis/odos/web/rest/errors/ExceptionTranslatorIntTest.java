@@ -1,32 +1,29 @@
 package gov.dhs.uscis.odos.web.rest.errors;
 
-import gov.dhs.uscis.odos.OdosCrrsUiApp;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.zalando.problem.spring.web.advice.MediaTypes;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.zalando.problem.spring.web.advice.MediaTypes;
+
+import gov.dhs.uscis.odos.base.test.BaseIntegrationTest;
+
 /**
  * Test class for the ExceptionTranslator controller advice.
  *
  * @see ExceptionTranslator
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = OdosCrrsUiApp.class)
-public class ExceptionTranslatorIntTest {
+
+public class ExceptionTranslatorIntTest extends BaseIntegrationTest {
 
     @Autowired
     private ExceptionTranslatorTestController controller;
