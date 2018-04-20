@@ -92,8 +92,12 @@ import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/cons
       this.reservation_info.roomScheduleEndTime = this.date + " " +  this.reservationTimeForm.get('endTime').value;
       this.reservationService.postReservationData(this.reservation_info)
       .subscribe((response)=>{
-          console.log(response);
           this.isReservationCompleteForm = true;
+          this.isReservationTimeForm = false;
+          this.registrationError = false;
+          setTimeout((router: Router) => {
+              this.router.navigate(['']);
+          }, 5000);
       }, (error)=> {
                 console.log(this.error);
                 this.processError(error);
@@ -103,9 +107,6 @@ import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/cons
               this.router.navigate(['']);
           }, 2000);
       } );
-
-      this.isReservationTimeForm = true;
-
     }
 
     private processError(response: HttpErrorResponse) {
