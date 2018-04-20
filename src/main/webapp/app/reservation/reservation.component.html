@@ -14,7 +14,7 @@
         <div class="container-fluid">
                 <div id="reservation-code">
                     <p></p>
-        
+
                     <div class="reservation_steps">
                         <span style="display: inline-block;" class="reservation_step">
                             <div class="reservation_step_img">
@@ -23,25 +23,25 @@
                                         <strong>1</strong>
                                     </div>
                                     <div style="color: #428bca;" class="reservation_step_name">Reservation Details</div>
-                                </div> 
+                                </div>
                                 <div *ngIf ="!isReservationDetailForm">
                                     <div class="reservation_step_img_text">
                                         <strong>1</strong>
                                     </div>
                                     <div class="reservation_step_name">Reservation Details</div>
-                                </div>                      
-                                
+                                </div>
+
                             </div>
                         </span>
                         <span style="display: inline-block;" class="reservation_step">
                             <div class="reservation_step_img">
-                                <div *ngIf ="isReservationTimeForm"> 
+                                <div *ngIf ="isReservationTimeForm">
                                     <div class="reservation_step_img_text" style="background-color: #428bca;">
                                         <strong>2</strong>
                                     </div>
                                     <div style="color: #428bca;" class="reservation_step_name">Reservation Date</div>
                                 </div>
-                                <div *ngIf ="!isReservationTimeForm"> 
+                                <div *ngIf ="!isReservationTimeForm">
                                     <div class="reservation_step_img_text" >
                                         <strong>2</strong>
                                     </div>
@@ -73,7 +73,7 @@
                             <div *ngIf="isReservationDetailForm">
                                 <h3>Reservation Details</h3>
                                 <form [formGroup]="reservationDetailForm">
-                                    <div class="personal_details">                     
+                                    <div class="personal_details">
                                         <div class="form-group planyo-form-item-group  col-md-8" id="row_first">
                                             <label for="firstName" class="control-label">First name<em>*</em></label>
                                             <input class="with-status-border form-control" maxlength="80" type="text" name="firstName" id="firstName" formControlName="firstName">
@@ -86,18 +86,18 @@
                                             <label for="email" class="control-label">Email<em>*</em></label>
                                             <input type="email" class="with-status-border form-control" maxlength="80"  name="email" id="email" formControlName="email" [email]="validateEmail">
                                         </div>
-                                        <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
+                                        <div class="form-group planyo-form-item-group  col-md-8" id="row_conf_title">
                                             <label for="conferenceTitle" class="control-label">Conference Title<em>*</em></label>
                                             <input type="text" class="with-status-border form-control" maxlength="80" type="text" name="conferenceTitle" id="conferenceTitle" formControlName="conferenceTitle">
                                         </div>
-                                        <div class="form-group planyo-form-item-group  col-md-8" id="row_email">
+                                        <div class="form-group planyo-form-item-group  col-md-8" id="row_conf_Desc">
                                             <label for="conferenceDescription" class="control-label">Conference Description<em>*</em></label>
                                             <textarea type="text" class="with-status-border form-control" maxlength="80" name="conferenceDescription" id="conferenceDescription" formControlName="conferenceDescription"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-button">
-                                        <label for="submit_form">&nbsp;</label>
-                                        <button [disabled]="!reservationDetailForm.valid" style="border-radius: 5px;" type="submit" class="btn btn-primary btn-sm" name="submit_form" id="submit_form" (click)="saveReservationDetails()">Continue</button>
+                                        <label for="submit_form_1">&nbsp;</label>
+                                        <button [disabled]="!reservationDetailForm.valid" style="border-radius: 5px;" type="submit" class="btn btn-primary btn-sm" name="submit_form_1" id="submit_form_1" (click)="saveReservationDetails()">Continue</button>
                                     </div>
                                 </form>
                             </div>
@@ -105,7 +105,7 @@
                                 <h3>Reservation Details</h3>
                                 <br>
                                 <form [formGroup]="reservationTimeForm">
-                                    <div class="personal_details">                     
+                                    <div class="personal_details">
                                         <div class="form-group planyo-form-item-group  col-md-8" id="row_startdate">
                                             <label for="startDate" class="control-label">Date<em>*</em></label>
                                             <input type="date" class="with-status-border form-control" maxlength="80" name="startDate" id="startDate" formControlName="startDate">
@@ -125,8 +125,8 @@
                                     <br>
                                     <br>
                                     <div class="form-button">
-                                        <label for="submit_form">&nbsp;</label>
-                                        <button [disabled]="!reservationTimeForm.valid" style="border-radius: 5px;" type="submit" class="btn btn-primary btn-sm" name="submit_form" id="submit_form"(click)="saveReservationTime()">Make Reservation</button>
+                                        <label for="submit_form_1">&nbsp;</label>
+                                        <button [disabled]="!reservationTimeForm.valid" style="border-radius: 5px;" type="submit" class="btn btn-primary btn-sm" name="submit_form_!" id="submit_form_!"(click)="saveReservationTime()">Make Reservation</button>
                                     </div>
                                 </form>
                             </div>
@@ -135,15 +135,15 @@
                                <br>
                                 <p>Thank you, {{reservation_info['firstName']}} {{reservation_info['lastName']}}</p>
                                 <p>Successfully Reserved the Conference Room({{reservation_info['conferenceRoomId']}})</p>
-                                <p>ON {{reservation_info['date']}} </p> 
+                                <p>ON {{reservation_info['date']}} </p>
                                 <p>Form {{reservation_info['roomScheduleStartTime']}} - {{reservation_info['roomScheduleEndTime']}}</p>
                             </div>
                         </div>
                         <div class="col-md-3">
-                
-                        </div>     
+
+                        </div>
                     </div>
-                </div>        
+                </div>
         </div>
     </div>
 </div>

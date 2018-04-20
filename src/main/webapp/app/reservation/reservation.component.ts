@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router}  from '@angular/router';
-import { FormGroup, FormArray, FormBuilder,
-  Validators,ReactiveFormsModule, FormControl  } from '@angular/forms';
+import { FormGroup, Validators, FormControl  } from '@angular/forms';
 import { ReservationService } from './reservation.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/constants/error.constants';
-// import { LOGIN_ALREADY_USED_TYPE,EMAIL_ALREADY_USED_TYPE } from 'src/main/webapp/app/shared';
-
 
   @Component({
     selector: 'jhi-reservation',
@@ -39,13 +36,27 @@ import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/cons
     isReservationTimeForm: boolean = false;
     isReservationCompleteForm: boolean = false;
 
-    constructor( private router: Router, private route: ActivatedRoute, private service: ReservationService) { }
+    reservation_info = {
+          'requestorId':'',
+          'roomScheduleStartTime':'',
+          'roomScheduleEndTime':'',
+          'conferenceTitle':'',
+          'conferenceRoomId': ''
+    };
 
-    ngOnInit() { 
+    date;
+
+    constructor(
+        private router: Router,
+        private route: ActivatedRoute,
+        private reservationService: ReservationService,
+    ) { }
+
+    ngOnInit() {
 
       this.route.params.subscribe((params: Params) => {
         this.roomName = params['roomName'];
-      })
+      });
 
       this.reservationDetailForm = new FormGroup({
           firstName: new FormControl('', Validators.required),
@@ -60,47 +71,35 @@ import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/cons
           startTime: new FormControl('', Validators.required),
           endTime: new FormControl('', Validators.required)
       });
-
-      
-    }
-    reservation_info = {
-      'date':'',
-      'firstName':'',
-      'lastName':'',
-      'requestorId':'',
-      'roomScheduleStartTime':'',
-      'roomScheduleEndTime':'',
-      'conferenceTitle':'',
-      'conferenceRoomId': ''
-
     }
 
     saveReservationDetails(){
       this.reservation_info.requestorId = this.reservationDetailForm.get('email').value;
       this.reservation_info.conferenceTitle = this.reservationDetailForm.get('conferenceTitle').value;
-      this.reservation_info.firstName = this.reservationDetailForm.get('firstName').value;
-      this.reservation_info.lastName = this.reservationDetailForm.get('lastName').value;
       this.reservation_info.conferenceRoomId = this.roomName;
 
       this.isReservationDetailForm = false;
       this.isReservationTimeForm = true;
     }
+
     saveReservationTime(){
-      this.reservation_info.date = this.reservationTimeForm.get('startDate').value;
-      this.reservation_info.roomScheduleStartTime = this.reservationTimeForm.get('startTime').value;
-      this.reservation_info.roomScheduleEndTime = this.reservationTimeForm.get('endTime').value;
+        this.date = this.reservationTimeForm.get('startDate').value;
 
-      console.log("RESERVATION DETAILS: " + JSON.stringify(this.reservation_info));
-      // if(this.reservation_info.roomScheduleStartTime < 8:00){
-
-      // }
-      this.service.postReservationData(this.reservation_info)
-      .subscribe(()=>{
-      }, (response)=> this.processError(response))
+      this.reservation_info.roomScheduleStartTime = this.date + " " + this.reservationTimeForm.get('startTime').value;
+      this.reservation_info.roomScheduleEndTime = this.date + " " +  this.reservationTimeForm.get('endTime').value;
+        console.log("DATEDATEDATE -----", this.reservation_info);
+      this.reservationService.postReservationData(this.reservation_info)
+      .subscribe((response)=>{
+          console.log(response);
+      }, (error)=> {
+                console.log(this.error);
+                this.processError(error);
+      } );
 
       this.isReservationTimeForm = false;
       this.isReservationCompleteForm = true;
     }
+
     private processError(response: HttpErrorResponse) {
       this.success = null;
       if (response.status === 400 && response.error.type === LOGIN_ALREADY_USED_TYPE) {
