@@ -12,8 +12,8 @@ export class ConferenceRoomService {
 
     constructor(private http: HttpClient) { }
 
-    getAllConferenceRoomData(buildingId: string) : Observable<BuildingInfo[]>{
-        return this.http.get<BuildingInfo[]>( CRRS_API_URL + 'api/conferenceroom');
+    getBuildingData(buildingId: Number) : Observable<BuildingInfo[]>{
+        return this.http.get<BuildingInfo[]>( CRRS_API_URL + 'api/buildings/' + buildingId);
     }
 
 }
