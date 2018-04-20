@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
+import { ChartModule } from 'primeng/chart';
+import { NgbDateStruct, NgbCalendar, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 
 import { Account, LoginModalService, Principal } from '../shared';
 import { ReportService } from "./report.service";
 
 @Component({
-  selector: 'jhi-report',
-  templateUrl: './report.component.html',
-  styleUrls: [
-      'report.scss'
-  ]
+    selector: 'jhi-report',
+    templateUrl: './report.component.html',
+    styleUrls: [
+        'report.scss'
+    ]
 })
 export class ReportComponent implements OnInit {
+
+    data: any;
+    filteredOption: string;
     account: Account;
     modalRef: NgbModalRef;
     filterBy: string;
@@ -23,7 +28,6 @@ export class ReportComponent implements OnInit {
         "Building Name": "search/building/",
         "Requester": "search/user/"
     }
-    data: any;
     selectedOption: string = this.filterOptions[0];
 
     constructor(
@@ -83,7 +87,7 @@ export class ReportComponent implements OnInit {
                 this.filterResult = response;
             },
             (error) => {
-                this.filterResult = []
+                this.filterResult = [];
                 console.log(error);
             }
         )
