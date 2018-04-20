@@ -3,7 +3,7 @@ import { Route } from '@angular/router';
 import { ResourceManagerComponent } from './';
 
 export const RESOURCE_MANAGER_ROUTE: Route = {
-    path: 'resourcemanagent',
+    path: 'resourcemanagment',
     component: ResourceManagerComponent,
     data: {
         authorities: [],
