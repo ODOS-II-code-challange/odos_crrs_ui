@@ -85,19 +85,21 @@
         
             <li><a class="toctree-l3" href="#sonarqube">SonarQube</a></li>
         
+            <li><a class="toctree-l3" href="#testing">Testing</a></li>
+        
             <li><a class="toctree-l3" href="#nexus-repository-manager">Nexus Repository Manager</a></li>
         
             <li><a class="toctree-l3" href="#twistlock">Twistlock</a></li>
         
             <li><a class="toctree-l3" href="#splunk">Splunk</a></li>
         
-            <li><a class="toctree-l3" href="#single-sign-on-sso">Single Sign On (SSO)</a></li>
-        
             <li><a class="toctree-l3" href="#application-services-architecture-microservice-architecture">Application Services Architecture (microservice architecture)</a></li>
         
             <li><a class="toctree-l3" href="#project-process">Project Process</a></li>
         
             <li><a class="toctree-l3" href="#microservice-registry">Microservice Registry</a></li>
+        
+            <li><a class="toctree-l3" href="#odos-console">ODOS Console</a></li>
         
         </ul>
     
@@ -184,6 +186,9 @@
 
     yarn global add generator-jhipster
 </code></pre>
+<p>As you run this project locally, you setup the environment variable  <br />
+export ORG_GRADLE_PROJECT_databasePassword=admin
+export ORG_GRADLE_PROJECT_databaseAppPassword=0d0sP455</p>
 <h2 id="project-layout">Project layout</h2>
 <ul>
 <li>The project layout for ODOS Confrence Room Reservation System encompasses several cutting edge technologies. </li>
@@ -279,61 +284,58 @@
 </ul>
 <h2 id="odos-conference-room-reservation-web-application-overview">ODOS Conference Room Reservation Web Application Overview</h2>
 <p>Here is the overview of the Conference Room Reservation web application
-????? replace the picture with the new one ??????</p>
+The conference room reservation begins by selecting the desired conference room buildings</p>
 <p><a href="./assets/images/Application_landing_page.png"><img alt="USCIS" src="./assets/images/Application_landing_page.png" /></a></p>
+<p>For demonstration purpose, we selected the "Kit Kat" building with all the equipment type selected</p>
+<p><a href="./assets/images/kitkat_room.png"><img alt="USCIS" src="./assets/images/kitkat_room.png" /></a></p>
+<p>One need to complete the three step reservation form process</p>
+<p><a href="./assets/images/Reservation_form.png"><img alt="USCIS" src="./assets/images/Reservation_form.png" /></a></p>
+<p>Reservation details page will give you an option to select duration of the meeting (minimum of 15minutes, and Maximum of 3hrs)
+<a href="./assets/images/Reservation_details.png"><img alt="USCIS" src="./assets/images/Reservation_details.png" /></a></p>
+<p>Successful Registration
+<a href="./assets/images/Registration_successful.png"><img alt="USCIS" src="./assets/images/Registration_successful.png" /></a></p>
 <h2 id="application-metrics">Application Metrics</h2>
 <p>Here is the view of the application metrics</p>
 <p><a href="./assets/images/monitoringscreen.png"><img alt="USCIS" src="./assets/images/monitoringscreen.png" /></a></p>
 <h2 id="log-management-screen">Log management screen</h2>
 <p><a href="./assets/images/logmanagementscreen.png"><img alt="USCIS" src="./assets/images/logmanagementscreen.png" /></a></p>
 <h2 id="database">Database</h2>
-<p>????
-????
-????</p>
+<p>The below diagram represents the relational database model for the proposed solution building ODOS Confdrence Room reservation web app.</p>
 <p><a href="./assets/images/odos_crrs_er_diagram.png"><img alt="USCIS" src="./assets/images/odos_crrs_er_diagram.png" /></a></p>
 <h2 id="pipeline">Pipeline</h2>
 <p>We used Jenkins Pipeline</p>
 <p><a href="http://odos.lassiterdynamics.com:8080/">http://odos.lassiterdynamics.com:8080/</a></p>
-<p><a href="./assets/images/ODOS_pipeline.png"><img alt="USCIS" src="./assets/images/ODOS_pipeline.png" /></a></p>
-<p>????
-????</p>
+<p><a href="./assets/images/Jenkins_pass.png"><img alt="USCIS" src="./assets/images/Jenkins_pass.png" /></a></p>
 <h2 id="sonarqube">SonarQube</h2>
 <p>We used SonarQube for quality code analysis</p>
 <p><a href="http://odos.lassiterdynamics.com:9000/projects?sort=-analysis_date">http://odos.lassiterdynamics.com:9000/projects?sort=-analysis_date</a></p>
 <p><a href="./assets/images/SonarQube.png"><img alt="USCIS" src="./assets/images/SonarQube.png" /></a></p>
-<p>????
-????</p>
+<h2 id="testing">Testing</h2>
+<p>We have conducted all the unit and Integration tests
+<a href="./assets/images/SonarQube_100.png"><img alt="USCIS" src="./assets/images/SonarQube_100.png" /></a></p>
 <h2 id="nexus-repository-manager">Nexus Repository Manager</h2>
 <p>We used Nexus Repository Manager for all dependencies and artifacts</p>
 <p><a href="http://nexus.lassiterdynamics.com:8081/#browse/browse">http://nexus.lassiterdynamics.com:8081/#browse/browse</a></p>
 <p><a href="./assets/images/Nexus_Repository_Manager.png"><img alt="USCIS" src="./assets/images/Nexus_Repository_Manager.png" /></a></p>
-<p>????
-????</p>
 <h2 id="twistlock">Twistlock</h2>
 <p>We used Twistlock for scanning containers and it is integrated with Jenkins jobs</p>
 <p><a href="http://security.lassiterdynamics.com:8081/#!/dashboard">http://security.lassiterdynamics.com:8081/#!/dashboard</a></p>
 <p><a href="./assets/images/Twistlock.png"><img alt="USCIS" src="./assets/images/Twistlock.png" /></a></p>
 <h2 id="splunk">Splunk</h2>
-<p>We used Splunk for log managment ???????? log forwarding need to be completed ?????????</p>
+<p>We used Splunk for log managment</p>
 <p><a href="http://odos.lassiterdynamics.com:8000/en-US/app/search/datasets">http://odos.lassiterdynamics.com:8000/en-US/app/search/datasets</a></p>
 <p><a href="./assets/images/Splunk.png"><img alt="USCIS" src="./assets/images/Splunk.png" /></a></p>
-<p>????
-????</p>
-<h2 id="single-sign-on-sso">Single Sign On (SSO)</h2>
-<ul>
-<li>we used SAML2
+<!-- ## Single Sign On (SSO)
+* we used SAML2
 ?????
 ?????
-????</li>
-</ul>
+???? -->
+
 <h2 id="application-services-architecture-microservice-architecture">Application Services Architecture (microservice architecture)</h2>
-<p>?????
-????
-????</p>
 <p><a href="./assets/images/Application_Archtecture.png"><img alt="USCIS" src="./assets/images/Application_Archtecture.png" /></a></p>
 <h2 id="project-process">Project Process</h2>
 <h4 id="mural-wall-of-odos-conference-room-reservation-system">Mural Wall of ODOS Conference Room Reservation System</h4>
-<p>?????</p>
+<p>We have used Mural for collaboration</p>
 <p><a href="./assets/images/Mural_wall.png"><img alt="USCIS" src="./assets/images/Mural_wall.png" /></a></p>
 <h4 id="jira-kanban-board">JIRA Kanban board</h4>
 <p><a href="https://uscisodos2.atlassian.net/secure/RapidBoard.jspa?rapidView=2&amp;projectKey=ODOS&amp;selectedIssue=ODOS-26">JIRA Kanban board</a></p>
@@ -352,6 +354,16 @@
 <p><a href="./assets/images/Logs.png"><img alt="USCIS" src="./assets/images/Logs.png" /></a></p>
 <p>ODOS registry uses swagger for API managment, listed are the API's exposed</p>
 <p><a href="./assets/images/Swagger.png"><img alt="USCIS" src="./assets/images/Swagger.png" /></a></p>
+<h2 id="odos-console">ODOS Console</h2>
+<p>Here is the ODOS Console in action displaying several reports in a dedicated dashboard</p>
+<p>JVM Dashboard
+<a href="./assets/images/jvm_dashboard.png"><img alt="USCIS" src="./assets/images/jvm_dashboard.png" /></a></p>
+<p>Console metrics dashboard
+<a href="./assets/images/console_metrics_dashboard.png"><img alt="USCIS" src="./assets/images/console_metrics_dashboard.png" /></a></p>
+<p>Log trail
+<a href="./assets/images/console_log_trail.png"><img alt="USCIS" src="./assets/images/console_log_trail.png" /></a></p>
+<p>Logs dashboard
+<a href="./assets/images/console_logs_dashboard.png"><img alt="USCIS" src="./assets/images/console_logs_dashboard.png" /></a></p>
               
             </div>
           </div>
@@ -401,5 +413,5 @@
 
 <!--
 MkDocs version : 0.17.3
-Build Date UTC : 2018-04-18 22:47:39
+Build Date UTC : 2018-04-20 04:54:05
 -->

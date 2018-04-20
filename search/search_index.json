@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to ODOS Conference Room Reservation System\n\n\n\n\n\nDescription\n\n\n\n\nThe purpose of this page is to provide a centeralized source of knowledge for ODOS Confrence Room Reservation System. The page will contain information on each of the services that will make up the Conference Room Reservation System. This page will also display the varity of pipeline tools that are being used in the project.\n\n\nThe left colomun of the page listed out all services and the coresponding functionality that will help users of this page navigate easily.\n\n\n\n\nCommands\n\n\nInstall JHipster 4\n\n\n    The Installing JHipster instructions show you all the tools you\u2019ll need to use a released version of JHipster.\n\n    Install Java 8 from Oracle.\n\n    Install Git from https://git-scm.com.\n\n    Install Node.js from http://nodejs.org. I used Node 6.9.1 to write this article.\n\n    Install Yarn using the Yarn installation instructions.\n\n    Run the following command to install Yeoman.\n\n    yarn global add yo\n\n    Run the following command to install JHipster.\n\n    yarn global add generator-jhipster\n\n\n\nProject layout\n\n\n\n\nThe project layout for ODOS Confrence Room Reservation System encompasses several cutting edge technologies. \n\n\n\n\nWe decided to use rapid application development framework of Jhipster, It combines three very successful frameworks in web development: Bootstrap, Angular, and Spring Boot. \n\n\n\n\n\n\n\nJHipster is a tool that has been endorsed by the Angular team and spring team. The first public release (version 0.3.1) was launched December 7, 2013, with an open-source, Apache 2.0-licensed project on GitHub. Since then, the project has had over 115 releases! At it's core, JHipster is a Yeoman generator. Yeoman is a code generator that you run with a yo command to generate complete applications or useful pieces of an application. \n\n\n\n\n\n\nThe technology stack used in creating ODOS Confrence Room Reservation System are:\n\n\n\n\n\n\nGateway/UI technology stack\n\n\n\n\nAngular-5\n\n\nResponsive Web Design with Twitter Bootstrap\n\n\nHTML5 Boilerplate\n\n\nWebSocket support with Spring Websocket\n\n\nEasy installation of new JavaScript libraries with Yarn\n\n\nBuild, optimization and live reload with Webpack\n\n\nTesting with Karma, Headless Chrome and Protractor\n\n\n\n\nTechnology stack on the server side\n\n\nA complete Spring application:\n\n\n\n\nSpring Boot for easy application configuration\n\n\nGradle configuration for building, testing and running the application \u201cdevelopment\u201d and \u201cproduction\u201d profiles \n\n\nSpring Security\n\n\nSpring MVC REST + Jackson\n\n\nWebSocket support with Spring Websocket\n\n\nSpring Data JPA + Bean Validation\n\n\nDatabase updates with Liquibase\n\n\nElasticsearch support for search capabilities on top of the database\n\n\n\n\nMicroservices Registry\n\n\n\n\nService discovery using Netflix Eureka\n\n\nZipkin to trace HTTP requests throughout your services\n\n\nElastalert to get alerted when an issue occurs\n\n\n\n\nMetrics Console\n\n\n\n\nMonitoring with Metrics and the ELK Stack\n\n\nCaching with ehcache (local cache), hazelcast\n\n\n\n\nGoing to production\n\n\n\n\nIn the bootstrap-prod.yml\n\n\nIn the application-prod.yml\n\n\n\n\n\n\nApplication services content\n\n\nWalkthrough\n\n\nLet\u2019s discover what the JHipster has done for us.\n\n\n\n\n\n\n/src/main/java folder contains our Spring code distributed as follows:\n\n\n\n\nconfig folder contains Spring\u2019s configuration.\n\n\ndomain folder contains all domain classes that are mapped by Hibernate to our choice of database, in this case, PostgreSQL.\n\n\nrepository folder contains all of the Spring Data based repositories.\n\n\nservice folder contains all of the @Service annotated class those are transactional.\n\n\nsecurity folder contains all of the Spring Security based implementations like a simple implementation of UserDetailsService.\n\n\nweb.rest folder contains all of the REST endpoints which uses Spring MVC\u2019s REST support.\n\n\n\n\n\n\n\n\n/src/main/resources/config/liquibase folder contains Liquibase changeset files. This folder also contains csv files to build initial users and authorities for the application.\n\n\n\n\n\n\n/src/main/webapp folder contains our AngularJS code described as follows:\n\n\n\n\nscripts.component folder contains all of the AngularJS\u2019 artifacts, like filters and services.\n\n\nscripts.app folder contains all of the app\u2019s JavaScript code that includes HTML and Angular Controllers distributed in the various folder like account, admin, entities etc.\n\n\nscripts.components folder contains all of the app\u2019s JavaScript code that includes Angular Services.\n\n\n\n\n\n\n\n\nRunning the application\n\n\nAs the JHipster application here uses Gradle and Grunt, all you need is just to run the Gradle wrapper and Grunt.\n\n\n\n\n\n\nExecute ./gradlew Gradle wrapper executable file. It would download the correct version of Gradle and run your application by executing default task bootRun. This command will process JS, CSS and Images to by executing Grunt tasks right inside of build.gradle. You will be served with the address http://localhost:8080/\n\n\n\n\n\n\nIn another terminal execute grunt or yarn start and it would start to build all the JS and CSS. You will be served with the address http://localhost:3000 or http://localhost:9000 that allows us to reload all of the HTML and JS changes without restarting our application.\n\n\n\n\n\n\nTo build a jar file and run that jar issue the commands; ./gradlew -Pprod clean bootRepackage. And now just execute java -jar build/libs/*.war \u2013spring.profiles.active=prod.\n\n\n\n\n\n\nODOS Conference Room Reservation Web Application Overview\n\n\nHere is the overview of the Conference Room Reservation web application\n????? replace the picture with the new one ??????\n\n\n\n\nApplication Metrics\n\n\nHere is the view of the application metrics\n\n\n\n\nLog management screen\n\n\n\n\nDatabase\n\n\n????\n????\n????\n\n\n\n\nPipeline\n\n\nWe used Jenkins Pipeline\n\n\nhttp://odos.lassiterdynamics.com:8080/\n\n\n\n\n????\n????\n\n\nSonarQube\n\n\nWe used SonarQube for quality code analysis\n\n\nhttp://odos.lassiterdynamics.com:9000/projects?sort=-analysis_date\n\n\n\n\n????\n????\n\n\nNexus Repository Manager\n\n\nWe used Nexus Repository Manager for all dependencies and artifacts\n\n\nhttp://nexus.lassiterdynamics.com:8081/#browse/browse\n\n\n\n\n????\n????\n\n\nTwistlock\n\n\nWe used Twistlock for scanning containers and it is integrated with Jenkins jobs\n\n\nhttp://security.lassiterdynamics.com:8081/#!/dashboard\n\n\n\n\nSplunk\n\n\nWe used Splunk for log managment ???????? log forwarding need to be completed ?????????\n\n\nhttp://odos.lassiterdynamics.com:8000/en-US/app/search/datasets\n\n\n\n\n????\n????\n\n\nSingle Sign On (SSO)\n\n\n\n\nwe used SAML2\n?????\n?????\n????\n\n\n\n\nApplication Services Architecture (microservice architecture)\n\n\n?????\n????\n????\n\n\n\n\nProject Process\n\n\nMural Wall of ODOS Conference Room Reservation System\n\n\n?????\n\n\n\n\nJIRA Kanban board\n\n\nJIRA Kanban board\n\n\nhttps://uscisodos2.atlassian.net/secure/RapidBoard.jspa?rapidView=2&projectKey=ODOS&selectedIssue=ODOS-26\n\n\n\n\nMicroservice Registry\n\n\nHere is the microservice registering in action registering both the backend microservice and UI microservice of the confrence room reservation web app\n\n\n\n\nApplication instances displays both of ODOS confrence room reservation web apps services\n\n\n\n\nODOS registry Health check displays the running status of each of the service registry components such as Eureka, Hystrix etc.\n\n\n\n\nODOS registry Configuration displays each service active spring configuration\n\n\n\n\nODOS registry uses the registeries \"view logs\" page\n\n\n\n\nODOS registry uses swagger for API managment, listed are the API's exposed",
+            "text": "Welcome to ODOS Conference Room Reservation System\n\n\n\n\n\nDescription\n\n\n\n\nThe purpose of this page is to provide a centeralized source of knowledge for ODOS Confrence Room Reservation System. The page will contain information on each of the services that will make up the Conference Room Reservation System. This page will also display the varity of pipeline tools that are being used in the project.\n\n\nThe left colomun of the page listed out all services and the coresponding functionality that will help users of this page navigate easily.\n\n\n\n\nCommands\n\n\nInstall JHipster 4\n\n\n    The Installing JHipster instructions show you all the tools you\u2019ll need to use a released version of JHipster.\n\n    Install Java 8 from Oracle.\n\n    Install Git from https://git-scm.com.\n\n    Install Node.js from http://nodejs.org. I used Node 6.9.1 to write this article.\n\n    Install Yarn using the Yarn installation instructions.\n\n    Run the following command to install Yeoman.\n\n    yarn global add yo\n\n    Run the following command to install JHipster.\n\n    yarn global add generator-jhipster\n\n\n\nAs you run this project locally, you setup the environment variable  \n\nexport ORG_GRADLE_PROJECT_databasePassword=admin\nexport ORG_GRADLE_PROJECT_databaseAppPassword=0d0sP455\n\n\nProject layout\n\n\n\n\nThe project layout for ODOS Confrence Room Reservation System encompasses several cutting edge technologies. \n\n\n\n\nWe decided to use rapid application development framework of Jhipster, It combines three very successful frameworks in web development: Bootstrap, Angular, and Spring Boot. \n\n\n\n\n\n\n\nJHipster is a tool that has been endorsed by the Angular team and spring team. The first public release (version 0.3.1) was launched December 7, 2013, with an open-source, Apache 2.0-licensed project on GitHub. Since then, the project has had over 115 releases! At it's core, JHipster is a Yeoman generator. Yeoman is a code generator that you run with a yo command to generate complete applications or useful pieces of an application. \n\n\n\n\n\n\nThe technology stack used in creating ODOS Confrence Room Reservation System are:\n\n\n\n\n\n\nGateway/UI technology stack\n\n\n\n\nAngular-5\n\n\nResponsive Web Design with Twitter Bootstrap\n\n\nHTML5 Boilerplate\n\n\nWebSocket support with Spring Websocket\n\n\nEasy installation of new JavaScript libraries with Yarn\n\n\nBuild, optimization and live reload with Webpack\n\n\nTesting with Karma, Headless Chrome and Protractor\n\n\n\n\nTechnology stack on the server side\n\n\nA complete Spring application:\n\n\n\n\nSpring Boot for easy application configuration\n\n\nGradle configuration for building, testing and running the application \u201cdevelopment\u201d and \u201cproduction\u201d profiles \n\n\nSpring Security\n\n\nSpring MVC REST + Jackson\n\n\nWebSocket support with Spring Websocket\n\n\nSpring Data JPA + Bean Validation\n\n\nDatabase updates with Liquibase\n\n\nElasticsearch support for search capabilities on top of the database\n\n\n\n\nMicroservices Registry\n\n\n\n\nService discovery using Netflix Eureka\n\n\nZipkin to trace HTTP requests throughout your services\n\n\nElastalert to get alerted when an issue occurs\n\n\n\n\nMetrics Console\n\n\n\n\nMonitoring with Metrics and the ELK Stack\n\n\nCaching with ehcache (local cache), hazelcast\n\n\n\n\nGoing to production\n\n\n\n\nIn the bootstrap-prod.yml\n\n\nIn the application-prod.yml\n\n\n\n\n\n\nApplication services content\n\n\nWalkthrough\n\n\nLet\u2019s discover what the JHipster has done for us.\n\n\n\n\n\n\n/src/main/java folder contains our Spring code distributed as follows:\n\n\n\n\nconfig folder contains Spring\u2019s configuration.\n\n\ndomain folder contains all domain classes that are mapped by Hibernate to our choice of database, in this case, PostgreSQL.\n\n\nrepository folder contains all of the Spring Data based repositories.\n\n\nservice folder contains all of the @Service annotated class those are transactional.\n\n\nsecurity folder contains all of the Spring Security based implementations like a simple implementation of UserDetailsService.\n\n\nweb.rest folder contains all of the REST endpoints which uses Spring MVC\u2019s REST support.\n\n\n\n\n\n\n\n\n/src/main/resources/config/liquibase folder contains Liquibase changeset files. This folder also contains csv files to build initial users and authorities for the application.\n\n\n\n\n\n\n/src/main/webapp folder contains our AngularJS code described as follows:\n\n\n\n\nscripts.component folder contains all of the AngularJS\u2019 artifacts, like filters and services.\n\n\nscripts.app folder contains all of the app\u2019s JavaScript code that includes HTML and Angular Controllers distributed in the various folder like account, admin, entities etc.\n\n\nscripts.components folder contains all of the app\u2019s JavaScript code that includes Angular Services.\n\n\n\n\n\n\n\n\nRunning the application\n\n\nAs the JHipster application here uses Gradle and Grunt, all you need is just to run the Gradle wrapper and Grunt.\n\n\n\n\n\n\nExecute ./gradlew Gradle wrapper executable file. It would download the correct version of Gradle and run your application by executing default task bootRun. This command will process JS, CSS and Images to by executing Grunt tasks right inside of build.gradle. You will be served with the address http://localhost:8080/\n\n\n\n\n\n\nIn another terminal execute grunt or yarn start and it would start to build all the JS and CSS. You will be served with the address http://localhost:3000 or http://localhost:9000 that allows us to reload all of the HTML and JS changes without restarting our application.\n\n\n\n\n\n\nTo build a jar file and run that jar issue the commands; ./gradlew -Pprod clean bootRepackage. And now just execute java -jar build/libs/*.war \u2013spring.profiles.active=prod.\n\n\n\n\n\n\nODOS Conference Room Reservation Web Application Overview\n\n\nHere is the overview of the Conference Room Reservation web application\nThe conference room reservation begins by selecting the desired conference room buildings\n\n\n\n\nFor demonstration purpose, we selected the \"Kit Kat\" building with all the equipment type selected\n\n\n\n\nOne need to complete the three step reservation form process\n\n\n\n\nReservation details page will give you an option to select duration of the meeting (minimum of 15minutes, and Maximum of 3hrs)\n\n\n\nSuccessful Registration\n\n\n\nApplication Metrics\n\n\nHere is the view of the application metrics\n\n\n\n\nLog management screen\n\n\n\n\nDatabase\n\n\nThe below diagram represents the relational database model for the proposed solution building ODOS Confdrence Room reservation web app.\n\n\n\n\nPipeline\n\n\nWe used Jenkins Pipeline\n\n\nhttp://odos.lassiterdynamics.com:8080/\n\n\n\n\nSonarQube\n\n\nWe used SonarQube for quality code analysis\n\n\nhttp://odos.lassiterdynamics.com:9000/projects?sort=-analysis_date\n\n\n\n\nTesting\n\n\nWe have conducted all the unit and Integration tests\n\n\n\nNexus Repository Manager\n\n\nWe used Nexus Repository Manager for all dependencies and artifacts\n\n\nhttp://nexus.lassiterdynamics.com:8081/#browse/browse\n\n\n\n\nTwistlock\n\n\nWe used Twistlock for scanning containers and it is integrated with Jenkins jobs\n\n\nhttp://security.lassiterdynamics.com:8081/#!/dashboard\n\n\n\n\nSplunk\n\n\nWe used Splunk for log managment\n\n\nhttp://odos.lassiterdynamics.com:8000/en-US/app/search/datasets\n\n\n\n\n\n\n\nApplication Services Architecture (microservice architecture)\n\n\n\n\nProject Process\n\n\nMural Wall of ODOS Conference Room Reservation System\n\n\nWe have used Mural for collaboration\n\n\n\n\nJIRA Kanban board\n\n\nJIRA Kanban board\n\n\nhttps://uscisodos2.atlassian.net/secure/RapidBoard.jspa?rapidView=2&projectKey=ODOS&selectedIssue=ODOS-26\n\n\n\n\nMicroservice Registry\n\n\nHere is the microservice registering in action registering both the backend microservice and UI microservice of the confrence room reservation web app\n\n\n\n\nApplication instances displays both of ODOS confrence room reservation web apps services\n\n\n\n\nODOS registry Health check displays the running status of each of the service registry components such as Eureka, Hystrix etc.\n\n\n\n\nODOS registry Configuration displays each service active spring configuration\n\n\n\n\nODOS registry uses the registeries \"view logs\" page\n\n\n\n\nODOS registry uses swagger for API managment, listed are the API's exposed\n\n\n\n\nODOS Console\n\n\nHere is the ODOS Console in action displaying several reports in a dedicated dashboard\n\n\nJVM Dashboard\n\n\n\nConsole metrics dashboard\n\n\n\nLog trail\n\n\n\nLogs dashboard",
             "title": "Home"
         },
         {
@@ -17,7 +17,7 @@
         },
         {
             "location": "/#commands",
-            "text": "Install JHipster 4      The Installing JHipster instructions show you all the tools you\u2019ll need to use a released version of JHipster.\n\n    Install Java 8 from Oracle.\n\n    Install Git from https://git-scm.com.\n\n    Install Node.js from http://nodejs.org. I used Node 6.9.1 to write this article.\n\n    Install Yarn using the Yarn installation instructions.\n\n    Run the following command to install Yeoman.\n\n    yarn global add yo\n\n    Run the following command to install JHipster.\n\n    yarn global add generator-jhipster",
+            "text": "Install JHipster 4      The Installing JHipster instructions show you all the tools you\u2019ll need to use a released version of JHipster.\n\n    Install Java 8 from Oracle.\n\n    Install Git from https://git-scm.com.\n\n    Install Node.js from http://nodejs.org. I used Node 6.9.1 to write this article.\n\n    Install Yarn using the Yarn installation instructions.\n\n    Run the following command to install Yeoman.\n\n    yarn global add yo\n\n    Run the following command to install JHipster.\n\n    yarn global add generator-jhipster  As you run this project locally, you setup the environment variable   \nexport ORG_GRADLE_PROJECT_databasePassword=admin\nexport ORG_GRADLE_PROJECT_databaseAppPassword=0d0sP455",
             "title": "Commands"
         },
         {
@@ -67,7 +67,7 @@
         },
         {
             "location": "/#odos-conference-room-reservation-web-application-overview",
-            "text": "Here is the overview of the Conference Room Reservation web application\n????? replace the picture with the new one ??????",
+            "text": "Here is the overview of the Conference Room Reservation web application\nThe conference room reservation begins by selecting the desired conference room buildings   For demonstration purpose, we selected the \"Kit Kat\" building with all the equipment type selected   One need to complete the three step reservation form process   Reservation details page will give you an option to select duration of the meeting (minimum of 15minutes, and Maximum of 3hrs)  Successful Registration",
             "title": "ODOS Conference Room Reservation Web Application Overview"
         },
         {
@@ -82,22 +82,27 @@
         },
         {
             "location": "/#database",
-            "text": "????\n????\n????",
+            "text": "The below diagram represents the relational database model for the proposed solution building ODOS Confdrence Room reservation web app.",
             "title": "Database"
         },
         {
             "location": "/#pipeline",
-            "text": "We used Jenkins Pipeline  http://odos.lassiterdynamics.com:8080/   ????\n????",
+            "text": "We used Jenkins Pipeline  http://odos.lassiterdynamics.com:8080/",
             "title": "Pipeline"
         },
         {
             "location": "/#sonarqube",
-            "text": "We used SonarQube for quality code analysis  http://odos.lassiterdynamics.com:9000/projects?sort=-analysis_date   ????\n????",
+            "text": "We used SonarQube for quality code analysis  http://odos.lassiterdynamics.com:9000/projects?sort=-analysis_date",
             "title": "SonarQube"
         },
         {
+            "location": "/#testing",
+            "text": "We have conducted all the unit and Integration tests",
+            "title": "Testing"
+        },
+        {
             "location": "/#nexus-repository-manager",
-            "text": "We used Nexus Repository Manager for all dependencies and artifacts  http://nexus.lassiterdynamics.com:8081/#browse/browse   ????\n????",
+            "text": "We used Nexus Repository Manager for all dependencies and artifacts  http://nexus.lassiterdynamics.com:8081/#browse/browse",
             "title": "Nexus Repository Manager"
         },
         {
@@ -107,17 +112,12 @@
         },
         {
             "location": "/#splunk",
-            "text": "We used Splunk for log managment ???????? log forwarding need to be completed ?????????  http://odos.lassiterdynamics.com:8000/en-US/app/search/datasets   ????\n????",
+            "text": "We used Splunk for log managment  http://odos.lassiterdynamics.com:8000/en-US/app/search/datasets",
             "title": "Splunk"
         },
         {
-            "location": "/#single-sign-on-sso",
-            "text": "we used SAML2\n?????\n?????\n????",
-            "title": "Single Sign On (SSO)"
-        },
-        {
             "location": "/#application-services-architecture-microservice-architecture",
-            "text": "?????\n????\n????",
+            "text": "",
             "title": "Application Services Architecture (microservice architecture)"
         },
         {
@@ -127,7 +127,7 @@
         },
         {
             "location": "/#mural-wall-of-odos-conference-room-reservation-system",
-            "text": "?????",
+            "text": "We have used Mural for collaboration",
             "title": "Mural Wall of ODOS Conference Room Reservation System"
         },
         {
@@ -141,6 +141,11 @@
             "title": "Microservice Registry"
         },
         {
+            "location": "/#odos-console",
+            "text": "Here is the ODOS Console in action displaying several reports in a dedicated dashboard  JVM Dashboard  Console metrics dashboard  Log trail  Logs dashboard",
+            "title": "ODOS Console"
+        },
+        {
             "location": "/about/",
             "text": "About ODOS CRRS\n\n\n    *\n    *\n    *",
             "title": "About"
@@ -152,43 +157,8 @@
         },
         {
             "location": "/extensions/footer/",
-            "text": "Footnotes\n\n\nFootnotes\n is another extension included in the standard Markdown library.\nAs the name says, it adds the ability to add footnotes to your documentation.\n\n\nInstallation\n\n\nAdd the following lines to your \nmkdocs.yml\n:\n\n\nmarkdown_extensions:\n  - footnotes\n\n\n\n\nUsage\n\n\nThe markup for footnotes is similar to the standard Markdown markup for links.\nA reference is inserted in the text, which can then be defined at any point in\nthe document.\n\n\nInserting the reference\n\n\nThe footnote reference is enclosed in square brackets and starts with a caret,\nfollowed by an arbitrary label which may contain numeric identifiers [1, 2, 3,\n...] or names [Granovetter et al. 1998]. The rendered references are always\nconsecutive superscripted numbers.\n\n\nExample:\n\n\nLorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]\n\n\n\n\nResult:\n\n\nLorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.\n^2\n\n\nInserting the content\n\n\nThe footnote content is also declared with a label, which must match the label\nused for the footnote reference. It can be inserted at an arbitrary position in\nthe document and is always rendered at the bottom of the page. Furthermore, a\nbacklink is automatically added to the footnote reference.\n\n\non a single line\n\n\nShort statements can be written on the same line.\n\n\nExample:\n\n\n[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\n\n\n\nResult:\n\n\nJump to footnote at the bottom of the page\n\n\n[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\n\non multiple lines\n\n\nParagraphs should be written on the next line. As with all Markdown blocks, the\ncontent must be indented by four spaces.\n\n\nExample:\n\n\n[^2]:\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod\n    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor\n    massa, nec semper lorem quam in massa.\n\n\n\n\nResult:\n\n\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod\n  nulla. Curabitur feugiat, tortor non consequat finibus, justo purus\n  auctor massa, nec semper lorem quam in massa.\n\n\n\nJump to footnote at the bottom of the page",
+            "text": "",
             "title": "Footnotes"
-        },
-        {
-            "location": "/extensions/footer/#footnotes",
-            "text": "Footnotes  is another extension included in the standard Markdown library.\nAs the name says, it adds the ability to add footnotes to your documentation.",
-            "title": "Footnotes"
-        },
-        {
-            "location": "/extensions/footer/#installation",
-            "text": "Add the following lines to your  mkdocs.yml :  markdown_extensions:\n  - footnotes",
-            "title": "Installation"
-        },
-        {
-            "location": "/extensions/footer/#usage",
-            "text": "The markup for footnotes is similar to the standard Markdown markup for links.\nA reference is inserted in the text, which can then be defined at any point in\nthe document.",
-            "title": "Usage"
-        },
-        {
-            "location": "/extensions/footer/#inserting-the-reference",
-            "text": "The footnote reference is enclosed in square brackets and starts with a caret,\nfollowed by an arbitrary label which may contain numeric identifiers [1, 2, 3,\n...] or names [Granovetter et al. 1998]. The rendered references are always\nconsecutive superscripted numbers.  Example:  Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]  Result:  Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit. ^2",
-            "title": "Inserting the reference"
-        },
-        {
-            "location": "/extensions/footer/#inserting-the-content",
-            "text": "The footnote content is also declared with a label, which must match the label\nused for the footnote reference. It can be inserted at an arbitrary position in\nthe document and is always rendered at the bottom of the page. Furthermore, a\nbacklink is automatically added to the footnote reference.",
-            "title": "Inserting the content"
-        },
-        {
-            "location": "/extensions/footer/#on-a-single-line",
-            "text": "Short statements can be written on the same line.  Example:  [^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Result:  Jump to footnote at the bottom of the page  [^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "title": "on a single line"
-        },
-        {
-            "location": "/extensions/footer/#on-multiple-lines",
-            "text": "Paragraphs should be written on the next line. As with all Markdown blocks, the\ncontent must be indented by four spaces.  Example:  [^2]:\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod\n    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor\n    massa, nec semper lorem quam in massa.  Result:    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod\n  nulla. Curabitur feugiat, tortor non consequat finibus, justo purus\n  auctor massa, nec semper lorem quam in massa.  Jump to footnote at the bottom of the page",
-            "title": "on multiple lines"
         }
     ]
 }

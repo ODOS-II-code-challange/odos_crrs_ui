@@ -66,17 +66,6 @@
     <a class="current" href="./">Footnotes</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#footnotes">Footnotes</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#installation">Installation</a></li>
-        
-            <li><a class="toctree-l4" href="#usage">Usage</a></li>
-        
-        </ul>
-    
-
     </ul>
                 </li>
     </ul>
@@ -120,60 +109,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="footnotes">Footnotes</h1>
-<p><a href="https://python-markdown.github.io/extensions/footnotes/">Footnotes</a> is another extension included in the standard Markdown library.
-As the name says, it adds the ability to add footnotes to your documentation.</p>
-<h2 id="installation">Installation</h2>
-<p>Add the following lines to your <code>mkdocs.yml</code>:</p>
-<pre><code class="yaml">markdown_extensions:
-  - footnotes
-</code></pre>
-
-<h2 id="usage">Usage</h2>
-<p>The markup for footnotes is similar to the standard Markdown markup for links.
-A reference is inserted in the text, which can then be defined at any point in
-the document.</p>
-<h3 id="inserting-the-reference">Inserting the reference</h3>
-<p>The footnote reference is enclosed in square brackets and starts with a caret,
-followed by an arbitrary label which may contain numeric identifiers [1, 2, 3,
-...] or names [Granovetter et al. 1998]. The rendered references are always
-consecutive superscripted numbers.</p>
-<p>Example:</p>
-<pre><code class="markdown">Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]
-</code></pre>
-
-<p>Result:</p>
-<p>Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.<a href="">^2</a></p>
-<h3 id="inserting-the-content">Inserting the content</h3>
-<p>The footnote content is also declared with a label, which must match the label
-used for the footnote reference. It can be inserted at an arbitrary position in
-the document and is always rendered at the bottom of the page. Furthermore, a
-backlink is automatically added to the footnote reference.</p>
-<h4 id="on-a-single-line">on a single line</h4>
-<p>Short statements can be written on the same line.</p>
-<p>Example:</p>
-<pre><code class="markdown">[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-</code></pre>
-
-<p>Result:</p>
-<p><a href="#fn:1">Jump to footnote at the bottom of the page</a></p>
-<p>[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<h4 id="on-multiple-lines">on multiple lines</h4>
-<p>Paragraphs should be written on the next line. As with all Markdown blocks, the
-content must be indented by four spaces.</p>
-<p>Example:</p>
-<pre><code class="markdown">[^2]:
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
-</code></pre>
-
-<p>Result:</p>
-<pre><code>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-  nulla. Curabitur feugiat, tortor non consequat finibus, justo purus
-  auctor massa, nec semper lorem quam in massa.
-</code></pre>
-<p><a href="#fn:2">Jump to footnote at the bottom of the page</a></p>
+                
               
             </div>
           </div>
