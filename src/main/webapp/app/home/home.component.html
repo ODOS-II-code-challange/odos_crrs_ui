@@ -18,7 +18,16 @@
                     </div>
                 </div>
 
-                <img src="../../content/images/building3/building.jpg" alt="">
+                <!--<img src="../../content/images/building3/building.jpg" alt="">-->
+                <div *ngIf="building.buildingId == 1">
+                <img  src="../../content/images/building1/building.jpg" alt="">
+            </div>
+            <div *ngIf="building.buildingId == 2">
+                <img  src="../../content/images/building2/building.jpg" alt="">
+            </div>
+            <div *ngIf="building.buildingId == 3">
+                <img  src="../../content/images/building3/building.jpg" alt="">
+            </div>
 
             </div>
             <div class="col-md-6">
