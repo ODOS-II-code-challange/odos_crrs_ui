@@ -4,16 +4,16 @@ import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { SERVER_API_URL } from '../app.constants';
+import { CRRS_API_URL } from '../app.constants';
 import { BuildingInfo } from './conference-room.model';
 
 @Injectable()
-export class HomeService {
+export class ConferenceRoomService {
 
     constructor(private http: HttpClient) { }
 
     getAllConferenceRoomData(buildingId: string) : Observable<BuildingInfo[]>{
-        return this.http.get<BuildingInfo[]>( SERVER_API_URL + 'api/conference/' + buildingId);
+        return this.http.get<BuildingInfo[]>( CRRS_API_URL + 'api/conferenceroom');
     }
 
 }
