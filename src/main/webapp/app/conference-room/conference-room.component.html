@@ -3,12 +3,10 @@
 
     <div class="row">
         <h2 class="landing-title">
-            CONFERENCE ROOMS: BUILDING {{ building_info.buildingName | uppercase }}
+            CONFERENCE ROOMS BUILDING {{ buildingInfo.buildingName | uppercase }}
         </h2>
     </div>
     <hr>
-
-    <p class="text-center mb-5 pb-4"> {{ building_info.buildingDesc }}</p>
 
     <div class="row">
         <div class="col-xs-7 col-sm-8"></div>
@@ -16,12 +14,11 @@
             <label style="font-weight: 500;"> <strong>Select a Conference Room</strong>
             </label>
             <select class="selectpicker" name="conferenceRoomOption" id="conferenceRoomOption" [(ngModel)]="selectedRoom">
-                <option selected="selected" *ngFor="let room_choice of building_info.conferenceRooms" [ngValue]="room_choice">
+                <option selected="selected" *ngFor="let room_choice of buildingInfo.conferenceRooms" [ngValue]="room_choice">
                     {{ room_choice.roomName }}
                 </option>
             </select>
         </div>
-
 
     </div>
 
@@ -36,47 +33,50 @@
                     </div>
             </div>
 
-
-
         </div>
 
         <div class="col-lg-7">
             <div class="form-header">
                 <h3><p class="font-weight-300 text-center h1">Conference Room: {{ selectedRoom.roomName }}</p></h3>
+                <hr>
             </div>
 
+
             <dl class="item-property">
-                <dt style="font-weight: 400;"><strong>Currently Available</strong></dt>
+                <dt style="font-weight: 500;"><span style="background-color: #dce1e2"> LOCATION </span></dt>
+                <dd>
+                    <p> {{ buildingInfo.buildingDesc }}</p>
+                </dd>
+            </dl>
+
+            <dl class="item-property">
+                <dt style="font-weight: 500;">CURRENTLY AVAILABLE</dt>
                 <dd>
                     <p>{{ selectedRoom.activeIndicator }}</p>
                 </dd>
             </dl>
 
             <dl class="param param-feature">
-                <dt style="font-weight: 400;"><strong>Equipments Provided</strong></dt>
+                <dt style="font-weight: 500;">EQUIPMENTS PROVIDED</dt>
                 <dd>
                     <div class="bg">
-                        <p>equipments go here</p>
-                        <!--<div class="chiller_cb" *ngFor="let equip of building_info.conference_room.equipment">-->
-                            <!--<input id="myCheckbox" type="checkbox" checked onclick="return false;" >-->
-                            <!--<label for="myCheckbox">{{ equip.equipment_name }}</label>-->
-                            <!--<span></span>-->
-                        <!--</div>-->
-
+                        <div class="chiller_cb" *ngFor="let equip of selectedRoom.equipments">
+                                <label >{{ equip.equipmentName }}</label> -  <span>{{ equip.equipmentDesc }}</span>
+                        </div>
                     </div>
                 </dd>
             </dl>
 
             <dl class="item-property">
-                <dt style="font-weight: 400;"><strong>Capacity</strong></dt>
+                <dt style="font-weight: 500;">CAPACITY</dt>
                 <dd><p>{{ selectedRoom.roomCapacity }} </p></dd>
             </dl>
 
             <dl class="item-property">
-                <dt style="font-weight: 400;"><strong>Reservation</strong></dt>
+                <dt style="font-weight: 500;">RESERVATION</dt>
                 <dd>
                     <a routerLink="/reservation/{{ selectedRoom.conferenceRoomId }}">
-                         <input style="border-radius: 5px;" class="btn btn-primary btn-lg" type="submit" name="reserve" id="reserve" value="Schedule a Room">
+                         <input style="border-radius: 5px;" class="btn btn-primary btn-sm" type="submit" name="reserve" id="reserve" value="Schedule a Room">
                      </a>
                 </dd>
             </dl>
