@@ -1,3 +1,86 @@
-<div class="row">
+<div class="container">
+    <div class="row">
+        <h2 class="font-weight-bold text-center h1">Reports</h2>
+    </div>
 
+    <br>
+    
+    <div class="row">
+        <div class="col-md-8 col-xs-offset-2">
+            <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                            <span id="search_concept">Filter by</span>
+                            <span class="caret"></span>
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button class="dropdown-item" (click)="filterByBld()">Building</button>
+                            <button class="dropdown-item" (click)="filterByRoom()">Rooms</button>
+                            <button class="dropdown-item" (click)="filterByUser()">User</button>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">
+                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                <span class="input-group-btn">
+                    <button class="btn btn-outline-success" type="button">
+                        <span>
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<div class="container">
+    <ngb-tabset>
+        <ngb-tab class="card" ngbTooltip="Tabular report">
+            <ng-template ngbTabTitle>
+                <b>Tabular</b> report</ng-template>
+            <ng-template ngbTabContent>
+                <br>
+                <div class="card card-header">
+                    <p>The CEO Conference Room located on the fifth floor. The building has 2 elevators. 
+                        The conference hall in theater-style set-up is equipped according to the latest 
+                        technology and can accomodate up to 300 persons..</p>
+                </div>
+                <br>
+                <table class="table table-sm table-hover table-bordered table-striped" style="height: 19px;">
+                    <thead class="" style="background-color: #c8def1">
+                        <tr>
+                            <th *ngFor="let item of tittle">{{item}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>data11</td>
+                            <td>data12</td>
+                            <td>data13</td>
+                            <td>data14</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab class="card" ngbTooltip="Graphical report">
+            <ng-template class="card card-header" ngbTabTitle>
+                <b>Graphical</b> report</ng-template>
+            <ng-template class="card card-body" ngbTabContent>
+                <br>
+                <p>Conference & Theatre Hall located on the first floor. Easily accessible for disabled persons.
+                     The conference hall in theatre-style set-up is equipped according to the latest technology 
+                     and can accommodate up to 300 persons.</p>
+
+                    <p-chart type="bar" [data]="data"></p-chart>
+                    <!-- <ul>
+                        <li *ngFor="let d of data">{{d.labels}}</li>
+                    </ul> -->
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
 </div>
