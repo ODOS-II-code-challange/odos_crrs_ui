@@ -3,6 +3,7 @@ import { NgbModalRef } from "@ng-bootstrap/ng-bootstrap";
 import { JhiEventManager } from "ng-jhipster";
 import {Router, ActivatedRoute, Params, Data, RouterStateSnapshot, ActivatedRouteSnapshot} from '@angular/router';
 
+
 import { Account, LoginModalService, Principal } from "../shared";
 import { ConferenceRoomService } from './conference-room.service';
 import {StateStorageService} from "../shared/auth/state-storage.service";
@@ -11,11 +12,16 @@ import {StateStorageService} from "../shared/auth/state-storage.service";
     selector: 'jhi-conference-room',
     templateUrl: './conference-room.component.html',
     styleUrls: [
-      'conference-room.scss'
+        'conference-room.scss'
     ]
 
 })
 export class ConferenceRoomComponent implements OnInit {
+
+    en: any;
+    date10: Date;
+    date: Date;
+
     account: Account;
     modalRef: NgbModalRef;
     buildingInfo= {};
@@ -31,7 +37,22 @@ export class ConferenceRoomComponent implements OnInit {
         private router: Router,
         private stateStorageService: StateStorageService
     ) {
+        this.en = {
+            firstDayOfWeek: 0,
+            dayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            dayNamesShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+            dayNamesMin: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+            monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            today: 'Today',
+            clear: 'Clear'
+        }
+
+
+
     }
+
+
 
     ngOnInit() {
         this.route.params.subscribe((params: Params) => this.getBuildigInfo(params['id']));
@@ -104,4 +125,5 @@ export class ConferenceRoomComponent implements OnInit {
             }
         )
     }
+
 }
