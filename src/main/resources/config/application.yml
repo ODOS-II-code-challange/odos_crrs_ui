@@ -71,9 +71,12 @@ spring:
         serialization.write_dates_as_timestamps: false
     datasource:
             type: com.zaxxer.hikari.HikariDataSource
-            url: jdbc:postgresql://${CRRUI_DATABASE_HOST:localhost}:${CRRUI_DATABASE_POST:5432}/${CRRUI_DATABASE_NAME:odos_crrs_svc}
-            username: ${CRRUI_DATABASE_USERNAME:odos_crrs_ui_app}
+            url: jdbc:postgresql://${CRRUI_DATABASE_HOST:localhost}:${CRRUI_DATABASE_POST:5432}/${CRRUI_DATABASE_NAME:odos_crrs_ui}
+            username: ${CRRUI_DATABASE_USERNAME:sdendaa}
             password: ${CRRUI_DATABASE_PASSWORD}
+            # url: jdbc:postgresql://localhost:5432/odos_crrs_ui
+            # username: sdendaa
+            # password: 
     jpa:
         open-in-view: false
         hibernate:
@@ -128,13 +131,13 @@ jhipster:
         max-pool-size: 50
         queue-capacity: 10000
     # By default CORS is disabled. Uncomment to enable.
-    #cors:
-        #allowed-origins: "*"
-        #allowed-methods: "*"
-        #allowed-headers: "*"
-        #exposed-headers: "Authorization,Link,X-Total-Count"
-        #allow-credentials: true
-        #max-age: 1800
+    cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+        allowed-headers: "*"
+        exposed-headers: "Authorization,Link,X-Total-Count"
+        allow-credentials: true
+        max-age: 1800
     mail:
         from: odos_crrs_ui@localhost
     swagger:

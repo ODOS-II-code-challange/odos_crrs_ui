@@ -31,6 +31,7 @@ import {
     PageRibbonComponent,
     ErrorComponent
 } from './layouts';
+import { ReservationService } from './reservation/reservation.service';
 
 
 @NgModule({

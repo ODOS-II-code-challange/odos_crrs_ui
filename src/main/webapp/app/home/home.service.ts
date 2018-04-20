@@ -12,8 +12,7 @@ export class HomeService {
 
   constructor(private http: HttpClient) { }
 
-  getAllBuildingData() : Observable<BuildingInfo[]>{
-      return this.http.get<BuildingInfo[]>( CRRS_API_URL + 'api/buildings');
+  getAllBuildingData(){
+      return this.http.get<BuildingInfo[]>(CRRS_API_URL + 'api/buildings');
   }
-
 }
