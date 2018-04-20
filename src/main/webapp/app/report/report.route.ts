@@ -3,7 +3,7 @@ import { Route } from '@angular/router';
 import { ReportComponent } from './';
 
 export const REPORT_ROUTE: Route = {
-    path: 'reports',
+    path: 'report',
     component: ReportComponent,
     data: {
         authorities: [],

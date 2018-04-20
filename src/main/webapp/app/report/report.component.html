@@ -1,30 +1,29 @@
 <div class="container">
     <div class="row">
-        <h2 class="font-weight-bold text-center h1">Reports</h2>
+        <h2 class="landing-title">
+            REPORTS
+        </h2>
+
     </div>
+    <hr>
 
     <br>
-    
+    <br>
+
     <div class="row">
         <div class="col-md-8 col-xs-offset-2">
             <div class="input-group">
                 <div class="input-group-btn search-panel">
                     <div ngbDropdown class="d-inline-block">
-                        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-                            <span id="search_concept">Filter by</span>
-                            <span class="caret"></span>
-                        </button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <button class="dropdown-item" (click)="filterByBld()">Building</button>
-                            <button class="dropdown-item" (click)="filterByRoom()">Rooms</button>
-                            <button class="dropdown-item" (click)="filterByUser()">User</button>
-                        </div>
+                        <select style="height: 40px;" class="selectpicker" name="filterOption" id="filterOption" [(ngModel)]="selectedOption">
+                            <option selected="selected" *ngFor="let filter of filterOptions" [ngValue]="filter">{{ filter }}</option>
+                        </select>
                     </div>
                 </div>
                 <input type="hidden" name="search_param" value="all" id="search_param">
-                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                <input style="height: 40px;" type="text" class="form-control" name="x" placeholder="Search term..." #filterBy>
                 <span class="input-group-btn">
-                    <button class="btn btn-outline-success" type="button">
+                    <button style="height: 40px;" class="btn btn-outline-success" type="button" (click)="searchBy(filterBy.value)">
                         <span>
                             <i class="fa fa-search"></i>
                         </span>
@@ -45,23 +44,23 @@
             <ng-template ngbTabContent>
                 <br>
                 <div class="card card-header">
-                    <p>The CEO Conference Room located on the fifth floor. The building has 2 elevators. 
-                        The conference hall in theater-style set-up is equipped according to the latest 
-                        technology and can accomodate up to 300 persons..</p>
+                    <p> The report below shows the last 10 reservation schedules according to the filter option applied.</p>
+
                 </div>
                 <br>
                 <table class="table table-sm table-hover table-bordered table-striped" style="height: 19px;">
                     <thead class="" style="background-color: #c8def1">
                         <tr>
-                            <th *ngFor="let item of tittle">{{item}}</th>
+                            <th *ngFor="let item of reportColumn">{{item}}</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>data11</td>
-                            <td>data12</td>
-                            <td>data13</td>
-                            <td>data14</td>
+                        <tr *ngFor="let item of filterResult">
+                            <td>{{ item.requestorId }}</td>
+                            <td>{{ item.conferenceRoomId }}</td>
+                            <td>{{ item.conferenceTitle }}</td>
+                            <td>{{ item.requestorId }}</td>
+                            <td>{{ item.roomScheduleStartTime | date }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -72,14 +71,10 @@
                 <b>Graphical</b> report</ng-template>
             <ng-template class="card card-body" ngbTabContent>
                 <br>
-                <p>Conference & Theatre Hall located on the first floor. Easily accessible for disabled persons.
-                     The conference hall in theatre-style set-up is equipped according to the latest technology 
-                     and can accommodate up to 300 persons.</p>
+                <p>The report below gives a histogram view of the frequency of schedules based on the filter option applied.</p>
 
-                    <p-chart type="bar" [data]="data"></p-chart>
-                    <!-- <ul>
-                        <li *ngFor="let d of data">{{d.labels}}</li>
-                    </ul> -->
+                <p-chart type="bar" [data]="data"></p-chart>
+
             </ng-template>
         </ngb-tab>
     </ngb-tabset>

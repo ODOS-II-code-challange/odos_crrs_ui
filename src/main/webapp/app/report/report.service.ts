@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable } from "rxjs/Observable";
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import { HttpClient } from '@angular/common/http';
 
 import { CRRS_API_URL } from '../app.constants';
-import { BuildingInfo } from './report.model';
 
 @Injectable()
-export class HomeService {
+export class ReportService {
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+    }
 
-  getAllBuildingData() : Observable<BuildingInfo[]>{
-      return this.http.get<BuildingInfo[]>( CRRS_API_URL + 'api/buildings');
-  }
-
+    getSearchResult(filterBy: string) {
+        return this.http.get(CRRS_API_URL + 'api/' + filterBy);
+    }
 }

@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { OdosCrrsUiSharedModule } from '../shared';
 import { REPORT_ROUTE, ReportComponent } from './';
+import { ReportService} from "./report.service";
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import { REPORT_ROUTE, ReportComponent } from './';
     entryComponents: [
     ],
     providers: [
+        ReportService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

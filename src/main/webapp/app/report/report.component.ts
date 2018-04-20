@@ -5,6 +5,7 @@ import { ChartModule } from 'primeng/chart';
 import { NgbDateStruct, NgbCalendar, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 
 import { Account, LoginModalService, Principal } from '../shared';
+import { ReportService } from "./report.service";
 
 @Component({
     selector: 'jhi-report',
@@ -14,16 +15,26 @@ import { Account, LoginModalService, Principal } from '../shared';
     ]
 })
 export class ReportComponent implements OnInit {
+
     data: any;
     filteredOption: string;
     account: Account;
     modalRef: NgbModalRef;
-
+    filterBy: string;
+    filterResult: any;
+    filterOptions: string[] = ["Building Name", "Requester"];
+    reportColumn = ["Building Name", "Conference room Name", "Conference Title", "Reserver", "Time"];
+    filterMapping = {
+        "Building Name": "search/building/",
+        "Requester": "search/user/"
+    }
+    selectedOption: string = this.filterOptions[0];
 
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
-        private eventManager: JhiEventManager
+        private eventManager: JhiEventManager,
+        private reportService: ReportService
     ) {
         this.data = {
             labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -49,6 +60,7 @@ export class ReportComponent implements OnInit {
             this.account = account;
         });
         this.registerAuthenticationSuccess();
+        // this.searchBy('search/building/' + );
     }
 
     registerAuthenticationSuccess() {
@@ -67,29 +79,17 @@ export class ReportComponent implements OnInit {
         this.modalRef = this.loginModalService.open();
     }
 
+    searchBy(filterBy: string){
 
-
-    Report_table_header = {
-        "Building": 1,
-        "ConfRm": 1,
-        "User": 1
-    }
-    tittle = ["Building Name", "Conference room Name", "Reserver", "Time"];
-
-    filterByBld() {
-        this.filteredOption = "building";
-        this.tittle = ["Conference room Name", "Reserver", "Time"];
-
-    }
-    filterByRoom() {
-        this.filteredOption = "Room";
-        this.tittle = ["Building Name", "Reserver", "Conference Tittle", "Time"];
-
-
-    }
-    filterByUser() {
-        this.filteredOption = "User";
-        this.tittle = ["Building Name", "Conference room Name", "Conference Tittle", "Time"];
-
+        console.log("filter by", this.filterMapping[this.selectedOption], filterBy);
+        return this.reportService.getSearchResult(this.filterMapping[this.selectedOption] + filterBy).subscribe(
+            (response) => {
+                this.filterResult = response;
+            },
+            (error) => {
+                this.filterResult = [];
+                console.log(error);
+            }
+        )
     }
 }
