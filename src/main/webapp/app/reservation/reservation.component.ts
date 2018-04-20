@@ -44,7 +44,8 @@ import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/cons
           'conferenceRoomId': ''
     };
 
-    date;
+    date; string;
+    registrationError : boolean = false;
 
     constructor(
         private router: Router,
@@ -71,6 +72,8 @@ import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/cons
           startTime: new FormControl('', Validators.required),
           endTime: new FormControl('', Validators.required)
       });
+
+      this.registrationError = false;
     }
 
     saveReservationDetails(){
@@ -95,9 +98,13 @@ import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/cons
                 console.log(this.error);
                 this.processError(error);
           this.isReservationCompleteForm = false;
+          this.registrationError = true;
+          setTimeout((router: Router) => {
+              this.router.navigate(['']);
+          }, 2000);
       } );
 
-      this.isReservationTimeForm = false;
+      this.isReservationTimeForm = true;
 
     }
 
