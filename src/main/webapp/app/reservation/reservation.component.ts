@@ -87,17 +87,18 @@ import { LOGIN_ALREADY_USED_TYPE, EMAIL_ALREADY_USED_TYPE } from '../shared/cons
 
       this.reservation_info.roomScheduleStartTime = this.date + " " + this.reservationTimeForm.get('startTime').value;
       this.reservation_info.roomScheduleEndTime = this.date + " " +  this.reservationTimeForm.get('endTime').value;
-        console.log("DATEDATEDATE -----", this.reservation_info);
       this.reservationService.postReservationData(this.reservation_info)
       .subscribe((response)=>{
           console.log(response);
+          this.isReservationCompleteForm = true;
       }, (error)=> {
                 console.log(this.error);
                 this.processError(error);
+          this.isReservationCompleteForm = false;
       } );
 
       this.isReservationTimeForm = false;
-      this.isReservationCompleteForm = true;
+
     }
 
     private processError(response: HttpErrorResponse) {
