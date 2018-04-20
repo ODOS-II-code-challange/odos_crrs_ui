@@ -31,7 +31,6 @@ import {
     PageRibbonComponent,
     ErrorComponent
 } from './layouts';
-import { ReservationService } from './reservation/reservation.service';
 
 
 @NgModule({
@@ -95,7 +94,7 @@ import { ReservationService } from './reservation/reservation.service';
             multi: true,
             deps: [
                 Injector
-            ]
+            ],
         }
     ],
     bootstrap: [ JhiMainComponent ]
