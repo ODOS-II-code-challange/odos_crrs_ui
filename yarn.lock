@@ -27,6 +27,12 @@
     "@ngtools/json-schema" "^1.1.0"
     rxjs "^5.5.6"
 
+"@angular/animations@^5.2.10":
+  version "5.2.10"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-5.2.10.tgz#61718792e0922ac622fd7c6dfb0afbb996638692"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/cli@1.6.6":
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.6.6.tgz#002119ab2ed804bbdc86075e0095eadda2a0baa0"
@@ -91,9 +97,19 @@
   optionalDependencies:
     node-sass "^4.7.2"
 
+"@angular/common@2.4.10":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-2.4.10.tgz#a3a682d2228fa30ec23dd0eb57c8e887fba26997"
+
 "@angular/common@5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.2.0.tgz#d184fb90763da1d1bab1f6c4f41dd80c79e47506"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/common@^5.x.x":
+  version "5.2.10"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.2.10.tgz#828308df8505a31f219a6895ff91dbb178ebac98"
   dependencies:
     tslib "^1.7.1"
 
@@ -112,15 +128,35 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/core@2.4.10":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.10.tgz#0b8320a65065965d998645b1f5cd3cf769b441ea"
+
 "@angular/core@5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.2.0.tgz#f91bf83de3e0defd621adcc007c25d7cd5a85af1"
   dependencies:
     tslib "^1.7.1"
 
+"@angular/core@^5.x.x":
+  version "5.2.10"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.2.10.tgz#a6eba06cae7267efbd2666e3fa5e42b84c2261de"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/forms@2.4.10":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-2.4.10.tgz#062133aaade1f3b3c962f1593208c541b622fd06"
+
 "@angular/forms@5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-5.2.0.tgz#b5fb6b9ba97334bca0e3202d7fee6b9162cbc824"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/forms@^5.x.x":
+  version "5.2.10"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-5.2.10.tgz#6a4cf9c87b57005599c0ec59a79b7f1b06375591"
   dependencies:
     tslib "^1.7.1"
 
@@ -189,9 +225,45 @@
   dependencies:
     typescript "~2.6.2"
 
+"@types/fullcalendar@2.7.38":
+  version "2.7.38"
+  resolved "https://registry.yarnpkg.com/@types/fullcalendar/-/fullcalendar-2.7.38.tgz#dd08c35b090cf787214658bd2a453ac9c191d896"
+  dependencies:
+    "@types/jquery" "*"
+    moment ">=2.14.0"
+
+"@types/fullcalendar@3.5.2":
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/@types/fullcalendar/-/fullcalendar-3.5.2.tgz#88cfb8962e1eb5ce11824fd95bc2f8d97a8e3518"
+  dependencies:
+    "@types/jquery" "*"
+    moment ">=2.14.0"
+
 "@types/jasmine@2.5.53":
   version "2.5.53"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.5.53.tgz#4e0cefad09df5ec48c8dd40433512f84b1568d61"
+
+"@types/jquery@*":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.1.tgz#55758d44d422756d6329cbf54e6d41931d7ba28f"
+
+"@types/jquery@2.0.41":
+  version "2.0.41"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.41.tgz#b87ba051011f99edbe586d8f97282e7786e01a6d"
+
+"@types/jquery@3.2.17":
+  version "3.2.17"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.2.17.tgz#01df9805dd5cf83a14cf5bfd81adced7d4fbd970"
+
+"@types/moment@2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@types/moment/-/moment-2.13.0.tgz#604ebd189bc3bc34a1548689404e61a2a4aac896"
+  dependencies:
+    moment "*"
+
+"@types/node@7.0.8":
+  version "7.0.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.8.tgz#25e4dd804b630c916ae671233e6d71f6ce18124a"
 
 "@types/node@8.0.18":
   version "8.0.18"
@@ -321,6 +393,38 @@ amdefine@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular-calendar@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/angular-calendar/-/angular-calendar-0.24.0.tgz#be2893362ecb2fb32043c36ca231d7310e6b3e45"
+  dependencies:
+    angular-draggable-droppable "^2.0.0"
+    angular-resizable-element "^2.0.0"
+    calendar-utils "^0.1.2"
+    date-fns "^1.28.5"
+    positioning "^1.3.1"
+    tslib "^1.7.1"
+
+angular-draggable-droppable@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/angular-draggable-droppable/-/angular-draggable-droppable-2.0.0.tgz#6b3ca7a0ddf36c55c30cdebea9de0592de29d76f"
+
+angular-resizable-element@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/angular-resizable-element/-/angular-resizable-element-2.0.0.tgz#10a437cce317e459e07c3189519ef395e6b86130"
+
+angular2-fullcalendar@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/angular2-fullcalendar/-/angular2-fullcalendar-1.0.19.tgz#8e725bd7c0a781d06d41730f78f39f6cd78c59af"
+  dependencies:
+    "@angular/common" "2.4.10"
+    "@angular/core" "2.4.10"
+    "@angular/forms" "2.4.10"
+    "@types/fullcalendar" "2.7.38"
+    "@types/jquery" "2.0.41"
+    "@types/moment" "2.13.0"
+    "@types/node" "7.0.8"
+    fullcalendar "3.2.0"
+
 angular2-template-loader@0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/angular2-template-loader/-/angular2-template-loader-0.6.2.tgz#c0d44e90fff0fac95e8b23f043acda7fd1c51d7c"
@@ -388,6 +492,17 @@ anymatch@^2.0.0:
   dependencies:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
+
+ap-angular2-fullcalendar@^1.3.7:
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/ap-angular2-fullcalendar/-/ap-angular2-fullcalendar-1.3.7.tgz#767c4bc0b74546355c406aa716f961dc66625c58"
+  dependencies:
+    "@angular/common" "^5.x.x"
+    "@angular/core" "^5.x.x"
+    "@angular/forms" "^5.x.x"
+    "@types/fullcalendar" "3.5.2"
+    "@types/jquery" "3.2.17"
+    fullcalendar "3.6.2"
 
 app-root-path@^2.0.1:
   version "2.0.1"
@@ -1067,6 +1182,10 @@ cache-base@^1.0.1:
     to-object-path "^0.3.0"
     union-value "^1.0.0"
     unset-value "^1.0.0"
+
+calendar-utils@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/calendar-utils/-/calendar-utils-0.1.2.tgz#79642f1beb49dc0c8719e2b5d480f7730501d74a"
 
 callsite@1.0.0:
   version "1.0.0"
@@ -1953,6 +2072,10 @@ dashdash@^1.12.0:
   resolved "https://registry.yarnpkg.com/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
   dependencies:
     assert-plus "^1.0.0"
+
+date-fns@^1.28.5:
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.29.0.tgz#12e609cdcb935127311d04d33334e2960a2a54e6"
 
 date-now@^0.1.4:
   version "0.1.4"
@@ -3231,6 +3354,27 @@ fstream@^1.0.0, fstream@^1.0.10, fstream@^1.0.2:
     inherits "~2.0.0"
     mkdirp ">=0.5 0"
     rimraf "2"
+
+fullcalendar@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/fullcalendar/-/fullcalendar-3.2.0.tgz#0718964c5edacc45e7204ad797a56bcab535068b"
+  dependencies:
+    jquery "2 - 3"
+    moment "^2.9.0"
+
+fullcalendar@3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/fullcalendar/-/fullcalendar-3.6.2.tgz#64956e7431be394b3d505b327f6b2e8f629c91da"
+  dependencies:
+    jquery "2 - 3"
+    moment "^2.9.0"
+
+fullcalendar@3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/fullcalendar/-/fullcalendar-3.7.0.tgz#74309943790a0085647ef7671c81c852f68b4a28"
+  dependencies:
+    jquery "2 - 3"
+    moment "^2.9.0"
 
 function-bind@^1.0.2, function-bind@^1.1.1:
   version "1.1.1"
@@ -4525,6 +4669,10 @@ joi@^11.1.1:
     isemail "3.x.x"
     topo "2.x.x"
 
+"jquery@2 - 3":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+
 jquery@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
@@ -5479,7 +5627,7 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
-moment@^2.11.2:
+moment@*, moment@>=2.14.0, moment@^2.11.2, moment@^2.22.1, moment@^2.9.0:
   version "2.22.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
 
@@ -6288,6 +6436,10 @@ portscanner@2.1.1:
     async "1.5.2"
     is-number-like "^1.0.3"
 
+positioning@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/positioning/-/positioning-1.3.1.tgz#6ff15e9bf8d8fe341ba1b3900d587e977b5554ec"
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
@@ -6626,6 +6778,10 @@ pretty-error@^2.0.2:
   dependencies:
     renderkid "^2.0.1"
     utila "~0.4"
+
+primeng@^5.2.4:
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-5.2.4.tgz#79d9b030ea37fdeb23284dcbbca3b89dddc3e91e"
 
 private@^0.1.6, private@~0.1.5:
   version "0.1.8"

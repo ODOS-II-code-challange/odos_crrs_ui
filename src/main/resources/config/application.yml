@@ -16,7 +16,7 @@
 
 eureka:
     client:
-        enabled: true
+        enabled: false
         healthcheck:
             enabled: true
         fetch-registry: true
@@ -64,6 +64,10 @@ management:
     health:
         mail:
             enabled: false # When using the MailService, configure an SMTP server and set this to true
+            # spring.datasource.type=com.zaxxer.hikari.HikariDataSource
+            # spring.datasource.url=jdbc:postgresql://localhost:5432/odos_crrs_ui
+            # spring.datasource.username=yonathankebe
+            # spring.datasource.password=
 spring:
     application:
         name: odos_crrs_ui
