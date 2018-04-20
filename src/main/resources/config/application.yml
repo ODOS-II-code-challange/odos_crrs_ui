@@ -71,9 +71,9 @@ spring:
         serialization.write_dates_as_timestamps: false
     datasource:
             type: com.zaxxer.hikari.HikariDataSource
-            url: jdbc:postgresql://${CRRUI_DATABASE_HOST:localhost}:${CRRUI_DATABASE_POST:5432}/${CRRUI_DATABASE_NAME:odos_crrs_svc}
+            url: jdbc:postgresql://${CRRUI_DATABASE_HOST:localhost}:${CRRUI_DATABASE_PORT:5432}/${CRRUI_DATABASE_NAME:odos_crrs_svc}
             username: ${CRRUI_DATABASE_USERNAME:odos_crrs_ui_app}
-            password: ${CRRUI_DATABASE_PASSWORD}
+            password: ${CRRUI_DATABASE_PASSWORD:0d0sP455}
     jpa:
         open-in-view: false
         hibernate:

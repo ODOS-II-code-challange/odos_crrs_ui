@@ -5,7 +5,7 @@
         </a>
         <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()">
             <span class="logo-img"></span>
-            <span class="navbar-title">USCIS CONFERENCE ROOM SCHEDULER</span>
+            <span class="navbar-title">ODOS CONFERENCE ROOM SCHEDULER</span>
         </a>
     </div>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
@@ -19,18 +19,26 @@
                 </a>
             </li>
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
-            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
+
+            <li *ngSwitchCase="true"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link "  routerLink="report" id="entity-menu1">
                     <span>
                         <i class="fa fa-th-list" aria-hidden="true"></i>
                         <span>
-                            Entities
+                            Reports
                         </span>
                     </span>
                 </a>
-                <ul class="dropdown-menu" ngbDropdownMenu>
-                    <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
-                </ul>
+            </li>
+            <li *ngSwitchCase="true"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link " routerLink="resourcemanagment" id="entity-menu2">
+                    <span>
+                        <i class="fa fa-th-list" aria-hidden="true"></i>
+                        <span>
+                            Resource Managment
+                        </span>
+                    </span>
+                </a>
             </li>
             <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="admin-menu">
