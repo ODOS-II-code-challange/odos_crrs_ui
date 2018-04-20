@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Principal } from '../shared';
+import { ResourceManagerService } from './resource-manager.service';
 
 @Component({
   selector: 'jhi-resource-manager',
@@ -10,13 +11,48 @@ import { Principal } from '../shared';
 })
 export class ResourceManagerComponent implements OnInit {
   
-  constructor() { }
+  constructor( private conferenceRoomService:ResourceManagerService) { }
   selectedResource:string;
+  buildingsData:any;
+  conferenceRoomsData:any;
+  equipmentsData:any;
 
   resources = ["Building", "Conference Room", "Equipment"];
   ngOnInit() {
     this.selectedResource = this.resources[0];
-    console.log("Principal user name"+Principal.name);
+     this.getAllBuildings();
+     this.getAllConferenceRooms();
+     this.equipmentsData();
   }
 
+  getAllBuildings(){
+      this.conferenceRoomService.getAllBuildingData().subscribe(
+          (response) => {
+              this.buildingsData = response;
+          },
+          (error) => {
+              console.log(error);
+          }
+      )  
+  }
+  getAllConferenceRooms(){
+    this.conferenceRoomService.getAllConferenceData().subscribe(
+        (response) => {
+            this.conferenceRoomsData = response;
+        },
+        (error) => {
+            console.log(error);
+        }
+    )  
+  }
+  getAllEquipmentRooms(){
+    this.conferenceRoomService.getAllEquipmentData().subscribe(
+        (response) => {
+            this.equipmentsData = response;
+        },
+        (error) => {
+            console.log(error);
+        }
+    )  
+  }
 }
